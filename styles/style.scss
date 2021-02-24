@@ -200,6 +200,7 @@ a {
 
     &__title {
         @include H1-MOB;
+        color: #AFAFAF;
     }
 
     &__top-container {
@@ -207,15 +208,18 @@ a {
     }
 
     &__icons {
-
+        color: #AFAFAF;
     }
 
     &__contacts-container {
 
+        display: flex;
+        flex-direction: column;
     }
 
     &__contact {
-
+        display: flex;
+        flex-direction: column;
     }
 
     &__contact-name {
@@ -232,6 +236,10 @@ a {
 
     &__copyright-container {
         
+    }
+
+    &__logo {
+        color: #AFAFAF;
     }
 
 }
