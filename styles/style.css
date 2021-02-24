@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #323232;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #323232;
+  width: 100vw;
+  color: #AFAFAF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media screen and (min-width: 320px) {
+  .navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.navbar__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #AFAFAF;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+@media screen and (min-width: 320px) {
+  .navbar__link {
+    width: 50%;
+  }
+}
+.navbar__link > a {
+  display: inline-block;
+  color: #AFAFAF;
+  margin-bottom: 1rem;
+}
+.navbar__link--active {
+  border-bottom: 3px solid #FFFFFF;
+}
+.navbar__link--active > a {
+  color: white;
+}
+.navbar__link-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (min-width: 320px) {
+  .navbar__link-container {
+    width: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .logo {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+}
+.logo > a {
+  color: #FFFFFF;
+}
+
+.hero {
+  background-image: url("../assets/CODY-IMAGES/efe-kurnaz-RnCPiXixooY-unsplash.jpg"), -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5)));
+  background-image: url("../assets/CODY-IMAGES/efe-kurnaz-RnCPiXixooY-unsplash.jpg"), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-blend-mode: overlay;
+  background-size: contain;
+  height: 11.438rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.hero__header {
+  color: #AFAFAF;
+}
+
+.about {
+  margin: 2rem 1rem 4.5rem 1rem;
+}
+.about__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.about__article-text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.about__article {
+  font-size: 0.813rem;
+  line-height: 1.125rem;
+}
+.about__image-caption-container {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+.about__article-title {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+.about__image {
+  background-image: url("");
+}/*# sourceMappingURL=style.css.map */

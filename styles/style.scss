@@ -1,0 +1,204 @@
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// PAGE RESET
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #323232;
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// NAVBAR
+.navbar {
+    background-color: #323232;
+    width: 100vw;
+    color: #AFAFAF;
+    display: flex;
+    
+
+    @include mobile {
+        flex-direction: column;
+        height: 5rem;
+        // justify-content: space-between;
+justify-content: center;
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        // margin: 1rem;
+        color:#AFAFAF;
+        @include H2-MOB;
+
+        @include mobile {
+            width: 50%;
+
+        }
+
+        & > a {
+            display: inline-block;
+            color: #AFAFAF;
+            margin-bottom: 1rem;
+        }
+
+        &--active {
+            border-bottom: 3px solid #FFFFFF;
+            
+            & > a {color: white;
+        }
+    }
+    }
+
+    &__link-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include mobile {
+            width: 100%;
+            align-items: flex-end;
+        }
+
+    }
+}
+
+.logo {
+    @include mobile {
+        text-align: center;
+        @include H1-MOB;
+    }
+
+    & > a {
+        color: #FFFFFF;
+    }
+
+}
+
+
+// HERO
+.hero {
+    background-image: url("../assets/CODY-IMAGES/efe-kurnaz-RnCPiXixooY-unsplash.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: contain;
+    height: 11.438rem;
+    display: flex;
+    align-items: center;
+    
+
+    &__header {
+        color: #AFAFAF;
+
+    }
+}
+
+// ABOUT SECTION
+.about {
+    margin: 2rem 1rem 4.5rem 1rem;
+    
+    &__article-cont {
+
+    }
+
+    &__title {
+        @include H1-MOB;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+
+    }
+
+    &__article-text-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__article {
+        @include H4-MOB
+    }
+
+    &__image-caption-container {
+        @include H2-MOB
+    }
+
+    &__article-title {
+        @include H2-MOB
+    }
+
+    &__image-caption {
+
+    }
+
+    &__caption-author {
+
+    }
+
+    &__image {
+        background-image: url('');
+
+    }
+
+
+}
+
+// PHOTO GALLERY
+
+.photos {
+
+
+    &__title {
+
+    }
+
+    &__container {
+
+    }
+
+}
+
+.footer {
+
+
+    &__top-container {
+
+    }
+
+    &__icons {
+
+    }
+
+    &__contacts-container {
+
+    }
+
+    &__contact {
+
+    }
+
+    &__contact-name {
+
+    }
+
+    &__contact-address {
+
+    }
+
+    &__copyright {
+
+    }
+
+    &__copyright-container {
+        
+    }
+
+}
+
