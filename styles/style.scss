@@ -2,10 +2,25 @@
 @use 'partials/mixins' as *;
 @font-face {
     font-family: "Avenir Next";
-    src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf")
+    src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
+    font-weight: 700;
+    font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Regular.otf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Demi.otf");
+    font-weight: 500;
+    font-style: normal;
+}
+
 
 // PAGE RESET
 * {
@@ -13,7 +28,7 @@
     margin: 0;
     padding: 0;
     color: #323232;
-    font-family: "Roboto";
+    font-family: "Avenir Next", cursive;
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0;
@@ -165,6 +180,7 @@ a {
 
         @include tablet {
             @include H1-hero-DT; 
+            margin-left: 1.5rem;
         }
     }
 }
@@ -176,6 +192,10 @@ a {
     flex-direction: column;
     align-items: center;
     padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 1.5rem;
+    }
     
     &__article-cont {
         display: flex;
@@ -189,12 +209,34 @@ a {
         margin-bottom: 1.5rem;
         align-self: flex-start;
 
+        @include tablet {
+            @include H1-DT;
+        }
+
+    }
+
+    &__articles-cont {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
     }
 
 
     &__article {
         @include H4-MOB;
         margin-bottom: 1.5rem;
+
+        @include tablet {
+            @include H4-para-DT;
+
+        }
+
+        &--left {
+            @include tablet {
+                margin-right: 1.5rem;
+            }
+        }
     }
 
     &__image-caption-container {
@@ -205,16 +247,29 @@ a {
         @include H2-MOB;
         margin-bottom: 1.5rem;
 
+        @include tablet {
+            @include H2-DT;
+        }
+
     }
 
     &__image-caption {
         @include H2-MOB;
         margin-bottom: 2rem;
 
+        @include tablet {
+            @include H2-DT;
+        }
+
     }
 
     &__caption-author {
         margin-bottom: 2.5rem;
+
+        @include tablet {
+            @include H3-DT;
+            font-weight: 500;
+        }
 
     }
 
@@ -222,6 +277,11 @@ a {
         width: 18rem;
         height: auto;
         margin-bottom: 1.5rem;
+
+        @include tablet {
+            width: 45rem;
+            height: auto;
+        }
 
     }
 
@@ -240,21 +300,40 @@ a {
 
     &__title {
         margin-bottom: 1.5rem;
-        margin-left:1rem;
+        margin-left: 1rem;
+        @include H1-MOB;
+
+        @include tablet {
+            margin-left: 1.5rem;
+            @include H1-DT;
+        }
     }
 
     &__container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
     }
 
 }
 
-.photo-mobile {
+.photo {
     width: 288px;
     height: auto;
     margin-bottom: 1rem;
+
+    @include tablet {
+        width: 14rem;
+        height: 7.875rem;
+        margin-top: 1.5rem;
+        margin-left:1.5rem;
+    }
 }
 
 
@@ -266,8 +345,12 @@ a {
     color: #AFAFAF;
     padding-left: .75rem;
 
+    @include tablet {
+        padding-left: 1.5rem;
+    }
+
     &__title {
-        @include H1-DT;
+        @include H1-MOB;
         padding-top: 3rem;
         padding-bottom: 2rem;
     }
@@ -283,6 +366,10 @@ a {
         justify-content: space-between;
         padding: 0 .5rem;
         margin-bottom: 2.75rem;
+
+        @include tablet {
+            padding: 0;
+        }
     }
 
     &__icon {
