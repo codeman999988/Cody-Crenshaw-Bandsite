@@ -339,6 +339,20 @@ a {
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__top-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+}
 .footer__icons {
   color: #AFAFAF;
   display: flex;
@@ -349,7 +363,9 @@ a {
 }
 @media screen and (min-width: 768px) {
   .footer__icons {
-    padding: 0;
+    padding-top: 3rem;
+    margin-bottom: 0;
+    margin-left: 3rem;
   }
 }
 .footer__icon {
@@ -360,36 +376,77 @@ a {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .footer__contacts-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .footer__contact {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact {
+    flex-direction: column;
+  }
 }
 .footer__contact-name {
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__contact-name {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
 .footer__address1 {
   font-size: 0.75rem;
   line-height: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__address1 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 .footer__address2 {
   font-size: 0.75rem;
   line-height: 1.25rem;
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__address2 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
 .footer__copyright {
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
 .footer__copyright-container {
   padding-bottom: 3rem;
-}
-.footer__logo {
-  color: #AFAFAF;
 }
 @media screen and (min-width: 320px) {
   .footer__logo {
     display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer__logo {
+    display: inline-block;
+    margin-top: 3rem;
+    margin-left: 11rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .footer__email {
@@ -397,8 +454,35 @@ a {
   line-height: 1.25rem;
   margin-bottom: 2em;
 }
+@media screen and (min-width: 768px) {
+  .footer__email {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
 .footer__contact-company {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__contact-company {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .contact {
+    margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact--right {
+    margin-right: 0;
+  }
 }

@@ -353,10 +353,19 @@ a {
         @include H1-MOB;
         padding-top: 3rem;
         padding-bottom: 2rem;
+
+        @include tablet {
+            @include H1-DT;
+            padding-bottom: 0;
+        }
     }
 
     &__top-container {
-
+        @include tablet {
+        display: flex;
+        align-items: center;
+        padding-bottom: 2rem;
+        }
     }
 
     &__icons {
@@ -368,7 +377,9 @@ a {
         margin-bottom: 2.75rem;
 
         @include tablet {
-            padding: 0;
+            padding-top: 3rem;
+            margin-bottom: 0;
+            margin-left: 3rem;
         }
     }
 
@@ -378,33 +389,56 @@ a {
     }
 
     &__contacts-container {
-
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+
+        }
     }
 
     &__contact {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            flex-direction: column;
+            // margin-right: 3.7rem;
+        }
     }
 
     &__contact-name {
         @include H2-MOB;
+
+        @include tablet {
+            @include H4-list-DT;
+        }
     }
 
     &__address1 {
         @include H5-MOB;
+        @include tablet {
+            @include H4-list-DT;
+        }
 
     }
 
     &__address2 {
         @include H5-MOB;
         margin-bottom: 1.5rem;
+        @include tablet {
+            @include H4-list-DT;
+        }
 
     }
 
     &__copyright {
         @include H5-MOB;
+        @include tablet {
+            @include H4-list-DT;
+        }
 
     }
 
@@ -414,20 +448,48 @@ a {
     }
 
     &__logo {
-        color: #AFAFAF;
         @include mobile {
             display: none;
+        }
+        @include tablet {
+            display: inline-block;
+            margin-top: 3rem;
+            margin-left: 11rem;
+            @include H2-DT;
+            // justify-self: flex-end;
+            // align-self: flex-end;
         }
     }
 
     &__email {
         @include H5-MOB;
         margin-bottom: 2em;
+        @include tablet {
+            @include H4-list-DT;
+        }
     }
 
     &__contact-company {
         @include H4-MOB;
         margin-bottom: 1.5rem;
+        @include tablet {
+            @include H4-list-DT;
+        }
     }
 }
 
+.contact {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        margin-right: 4rem;
+    }
+
+
+    &--right {
+        @include tablet {
+        margin-right: 0;
+        }
+    }
+}
