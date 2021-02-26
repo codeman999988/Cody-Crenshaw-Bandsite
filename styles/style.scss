@@ -88,6 +88,10 @@ a {
 
     }
 
+    @include desktop {
+
+    }
+
     &__link {
         display: flex;
         justify-content: center;
@@ -107,6 +111,11 @@ a {
 
         }
 
+        @include desktop {
+            margin: 0 0 0 3.5rem;
+            width: 5rem;
+        }
+
         & > a {
             display: inline-block;
             color: #AFAFAF;
@@ -117,6 +126,16 @@ a {
             border-bottom: 3px solid #FFFFFF;
             
             & > a {color: white;
+        }
+
+        &--left {
+            @include desktop {
+                margin-right: 0;
+            }
+        }
+        &--right {
+            
+
         }
     }
     }
@@ -148,7 +167,11 @@ a {
         display: inline-block;
 
         @include tablet {
-            margin-left: 1.5rem;;
+            margin-left: 1.5rem;
+        }
+
+        @include desktop {
+            margin-left: 11.25rem;
         }
     }
 
@@ -174,6 +197,11 @@ a {
         height: 25rem;
     }
 
+    @include desktop {
+        height: 41.875rem;
+        background-size: cover;
+    }
+
     &__header {
         margin-left: 1rem;
         flex-wrap: wrap;
@@ -181,6 +209,12 @@ a {
         @include tablet {
             @include H1-hero-DT; 
             margin-left: 1.5rem;
+            width: 80%;
+        }
+
+        @include desktop {
+            margin-left: 11.25rem;
+            width: 50%;
         }
     }
 }
@@ -195,6 +229,12 @@ a {
 
     @include tablet {
         padding: 0 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    @include desktop {
+        margin-top: 3rem;
+        padding-left: 11.25rem;
     }
     
     &__article-cont {
@@ -211,6 +251,10 @@ a {
 
         @include tablet {
             @include H1-DT;
+        }
+
+        @include desktop {
+            margin-bottom: 3rem;
         }
 
     }
@@ -283,6 +327,10 @@ a {
             height: auto;
         }
 
+        @include desktop {
+            width: 56rem;
+            height: auto;
+        }
     }
 
     &__image-container {
@@ -307,6 +355,10 @@ a {
             margin-left: 1.5rem;
             @include H1-DT;
         }
+
+        @include desktop {
+            margin-left: 11.25rem;
+        }
     }
 
     &__container {
@@ -318,6 +370,10 @@ a {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
+    }
+
+    @include desktop {
+        margin-left: 11.25rem;
     }
     }
 
@@ -333,6 +389,13 @@ a {
         height: 7.875rem;
         margin-top: 1.5rem;
         margin-left:1.5rem;
+    }
+
+    @include desktop {
+        width: 21.5rem;
+        height: 12.0625rem;
+        margin-left: 0;
+        margin-right: 1.5rem;
     }
 }
 
