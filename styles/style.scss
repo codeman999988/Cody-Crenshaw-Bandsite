@@ -43,6 +43,23 @@ a {
     text-decoration: none;
 }
 
+body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    // background-color: blueviolet;
+    
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
 //helper classes
 
 .alab {
@@ -85,11 +102,9 @@ a {
         flex-direction: row;
         justify-content: flex-start;
         // align-items: center;
-
     }
 
     @include desktop {
-
     }
 
     &__link {
@@ -124,8 +139,12 @@ a {
 
         &--active {
             border-bottom: 3px solid #FFFFFF;
+            font-weight: 500;
             
-            & > a {color: white;
+
+            & > a {
+                color: white;
+            }
         }
 
         &--left {
@@ -134,11 +153,9 @@ a {
             }
         }
         &--right {
-            
-
         }
     }
-    }
+
 
     &__link-container {
         width: 100%;
@@ -147,15 +164,15 @@ a {
 
 
         @include mobile {
-            width: 100%;
+            // width: 100%;
             align-items: flex-end;
+            padding-inline-start: 0px;
         }
 
         @include tablet {
             width: auto;
             padding-top: 2rem;
         }
-
     }
 }
 
@@ -165,7 +182,7 @@ a {
         @include H1-MOB;
         margin-top: 1.5rem;
         display: inline-block;
-
+    }
         @include tablet {
             margin-left: 1.5rem;
         }
@@ -173,12 +190,11 @@ a {
         @include desktop {
             margin-left: 11.25rem;
         }
-    }
+
 
     & > a {
         color: #FFFFFF;
     }
-
 }
 
 
@@ -186,11 +202,11 @@ a {
 .hero {
     background-image: url("../assets/CODY-IMAGES/efe-kurnaz-RnCPiXixooY-unsplash.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     background-blend-mode: overlay;
-    background-size: contain;
+    background-size: cover;
     height: 11.438rem;
     display: flex;
     align-items: center;
-    
+    width: 100%;
 
     @include tablet {
         width: 100%;
@@ -219,13 +235,15 @@ a {
     }
 }
 
+
 // ABOUT SECTION
 .about {
-    margin: 2rem 0rem 4.5rem 0rem;
+    padding: 2rem 1rem 4.5rem 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 1rem;
+    width: 100%;
 
     @include tablet {
         padding: 0 1.5rem;
@@ -235,37 +253,9 @@ a {
     @include desktop {
         margin-top: 3rem;
         padding-left: 11.25rem;
-    }
+        align-items: flex-start;
     
-    &__article-cont {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
     }
-
-    &__title {
-        @include H1-MOB;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        align-self: flex-start;
-
-        @include tablet {
-            @include H1-DT;
-        }
-
-        @include desktop {
-            margin-bottom: 3rem;
-        }
-
-    }
-
-    &__articles-cont {
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-        }
-    }
-
 
     &__article {
         @include H4-MOB;
@@ -273,7 +263,10 @@ a {
 
         @include tablet {
             @include H4-para-DT;
+        }
 
+        @include desktop {
+            width: 26.25rem;
         }
 
         &--left {
@@ -282,9 +275,24 @@ a {
             }
         }
     }
+    
+    &__article-cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
 
-    &__image-caption-container {
-        @include H2-MOB;
+        @include desktop {}
+    }
+
+    &__articles-cont {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
+        @include desktop {
+            // margin-left: 11.25rem;
+            margin-left: 6rem;
+        }
     }
 
     &__article-title {
@@ -295,26 +303,26 @@ a {
             @include H2-DT;
         }
 
-    }
-
-    &__image-caption {
-        @include H2-MOB;
-        margin-bottom: 2rem;
-
-        @include tablet {
-            @include H2-DT;
+        @include desktop {
+            // padding-left: 11.25rem;
+            margin-left: 6rem;
         }
 
     }
 
     &__caption-author {
         margin-bottom: 2.5rem;
+        @include H2-MOB;
 
         @include tablet {
-            @include H3-DT;
+            @include H2-DT;
             font-weight: 500;
         }
 
+        @include desktop {
+            // padding-left: 15rem;
+            margin-left: 6rem;
+        }
     }
 
     &__image {
@@ -329,23 +337,76 @@ a {
 
         @include desktop {
             width: 56rem;
-            height: auto;
+            height: 28.125rem;
+            margin-bottom: 3rem;
+            margin-left: 6rem;
         }
     }
 
-    &__image-container {
-        display: flex;
-        justify-content: center;
+    &__image-caption {
+        @include H2-MOB;
+        margin-bottom: 2rem;
+        width: 265px;
+
+        @include tablet {
+            @include H2-DT;
+            width: auto;
+        }
+
+        @include desktop {
+            // padding-left: 15rem;
+            margin-left: 6rem;
+            width: 50rem;
+        }
     }
 
+        &__image-caption-container {
+            @include H2-MOB;
+        }
 
+        &__image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+    &__title {
+        @include H1-MOB;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        align-self: flex-start;
+
+        @include tablet {
+            @include H1-DT;
+        }
+
+        @include desktop {
+            margin-bottom: 3rem;
+            // padding-left: 11.25rem;
+        }
+    }
 }
 
 // PHOTO GALLERY
 
 .photos {
-
-
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    
+        @include tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+    
+        @include desktop {
+            margin-left: 11.25rem;
+            margin-bottom: 2.5rem;
+            }
+        }
+    
     &__title {
         margin-bottom: 1.5rem;
         margin-left: 1rem;
@@ -358,25 +419,9 @@ a {
 
         @include desktop {
             margin-left: 11.25rem;
+            padding-left: 0;
         }
     }
-
-    &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @include tablet {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-    }
-
-    @include desktop {
-        margin-left: 11.25rem;
-    }
-    }
-
 }
 
 .photo {
@@ -407,48 +452,30 @@ a {
     background-color: #323232;
     color: #AFAFAF;
     padding-left: .75rem;
+    width: 100%;
 
     @include tablet {
         padding-left: 1.5rem;
     }
 
-    &__title {
-        @include H1-MOB;
-        padding-top: 3rem;
-        padding-bottom: 2rem;
+    @include desktop {
+        padding-left: 11.25rem;
+    }
 
+    &__address1 {
+        @include H5-MOB;
+        
         @include tablet {
-            @include H1-DT;
-            padding-bottom: 0;
+            @include H4-list-DT;
         }
     }
 
-    &__top-container {
+    &__address2 {
+        @include H5-MOB;
+        margin-bottom: 1.5rem;
         @include tablet {
-        display: flex;
-        align-items: center;
-        padding-bottom: 2rem;
+            @include H4-list-DT;
         }
-    }
-
-    &__icons {
-        color: #AFAFAF;
-        display: flex;
-        width: 9.5rem;
-        justify-content: space-between;
-        padding: 0 .5rem;
-        margin-bottom: 2.75rem;
-
-        @include tablet {
-            padding-top: 3rem;
-            margin-bottom: 0;
-            margin-left: 3rem;
-        }
-    }
-
-    &__icon {
-        width: 1.5rem;
-        height: 1.5rem;
     }
 
     &__contacts-container {
@@ -458,7 +485,6 @@ a {
         @include tablet {
             display: flex;
             flex-direction: row;
-
         }
     }
 
@@ -480,21 +506,12 @@ a {
         }
     }
 
-    &__address1 {
-        @include H5-MOB;
-        @include tablet {
-            @include H4-list-DT;
-        }
-
-    }
-
-    &__address2 {
-        @include H5-MOB;
+    &__contact-company {
+        @include H4-MOB;
         margin-bottom: 1.5rem;
         @include tablet {
             @include H4-list-DT;
         }
-
     }
 
     &__copyright {
@@ -502,12 +519,38 @@ a {
         @include tablet {
             @include H4-list-DT;
         }
-
     }
 
     &__copyright-container {
         padding-bottom: 3rem;
-        
+    }
+
+    &__email {
+        @include H5-MOB;
+        margin-bottom: 2rem;
+        @include tablet {
+            @include H4-list-DT;
+        }
+    }
+
+    &__icons {
+        color: #AFAFAF;
+        display: flex;
+        width: 9.5rem;
+        // justify-content: space-between;
+        // padding: 0 .5rem;
+        margin-bottom: 2.75rem;
+
+        @include tablet {
+            padding-top: 3rem;
+            margin-bottom: 0;
+            margin-left: 3rem;
+        }
+    }
+    
+    &__icon {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     &__logo {
@@ -520,23 +563,26 @@ a {
             margin-left: 11rem;
             @include H2-DT;
             // justify-self: flex-end;
-            // align-self: flex-end;
+            align-self: flex-end;
         }
     }
 
-    &__email {
-        @include H5-MOB;
-        margin-bottom: 2em;
+    &__title {
+        @include H1-MOB;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+
         @include tablet {
-            @include H4-list-DT;
+            @include H1-DT;
+            padding-bottom: 0;
         }
     }
 
-    &__contact-company {
-        @include H4-MOB;
-        margin-bottom: 1.5rem;
+    &__top-container {
         @include tablet {
-            @include H4-list-DT;
+        display: flex;
+        align-items: center;
+        padding-bottom: 2rem;
         }
     }
 }
