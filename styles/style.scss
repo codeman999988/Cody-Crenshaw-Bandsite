@@ -49,6 +49,9 @@ body {
     margin: 0;
     padding: 0;
     // background-color: blueviolet;
+    @include desktop {
+        overflow-x: initial;
+    }
     
 }
 
@@ -57,6 +60,10 @@ main {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    
+    @include desktop {
+        overflow-x: initial;
+    }
 }
 
 
@@ -259,7 +266,7 @@ main {
 
     &__article {
         @include H4-MOB;
-        margin-bottom: 1.5rem;
+        margin-bottom: 4.5rem;
 
         @include tablet {
             @include H4-para-DT;
@@ -299,6 +306,7 @@ main {
         @include H2-MOB;
         margin-bottom: 1.5rem;
 
+
         @include tablet {
             @include H2-DT;
         }
@@ -306,6 +314,7 @@ main {
         @include desktop {
             // padding-left: 11.25rem;
             margin-left: 6rem;
+            margin-bottom: 2rem;
         }
 
     }
@@ -322,6 +331,7 @@ main {
         @include desktop {
             // padding-left: 15rem;
             margin-left: 6rem;
+            margin-bottom: 3.5rem;
         }
     }
 
@@ -357,6 +367,7 @@ main {
             // padding-left: 15rem;
             margin-left: 6rem;
             width: 50rem;
+            margin-bottom: 2.5rem;
         }
     }
 
@@ -374,6 +385,7 @@ main {
         font-weight: 700;
         margin-bottom: 1.5rem;
         align-self: flex-start;
+        margin-top: 2rem;
 
         @include tablet {
             @include H1-DT;
@@ -398,11 +410,12 @@ main {
         @include tablet {
             flex-direction: row;
             flex-wrap: wrap;
-            align-items: flex-start;
+            align-items: center;
         }
     
         @include desktop {
-            margin-left: 11.25rem;
+            padding-left: 11.25rem;
+            padding-right: 5rem;
             margin-bottom: 2.5rem;
             }
         }
@@ -472,7 +485,7 @@ main {
 
     &__address2 {
         @include H5-MOB;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         @include tablet {
             @include H4-list-DT;
         }
@@ -508,7 +521,7 @@ main {
 
     &__contact-company {
         @include H4-MOB;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         @include tablet {
             @include H4-list-DT;
         }
@@ -522,14 +535,18 @@ main {
     }
 
     &__copyright-container {
-        padding-bottom: 3rem;
+        padding-bottom: 2rem;
     }
 
     &__email {
         @include H5-MOB;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         @include tablet {
             @include H4-list-DT;
+        }
+
+        @include desktop {
+            margin-bottom: 2.5rem;
         }
     }
 
@@ -537,7 +554,7 @@ main {
         color: #AFAFAF;
         display: flex;
         width: 9.5rem;
-        // justify-content: space-between;
+        justify-content: space-between;
         // padding: 0 .5rem;
         margin-bottom: 2.75rem;
 
@@ -545,6 +562,10 @@ main {
             padding-top: 3rem;
             margin-bottom: 0;
             margin-left: 3rem;
+        }
+
+        @include desktop {
+            width: 8.5rem;
         }
     }
     
@@ -562,8 +583,10 @@ main {
             margin-top: 3rem;
             margin-left: 11rem;
             @include H2-DT;
-            // justify-self: flex-end;
+            justify-self: flex-end;
             align-self: flex-end;
+            margin-right: 180px;
+
         }
     }
 
@@ -584,7 +607,12 @@ main {
         align-items: center;
         padding-bottom: 2rem;
         }
+        @include desktop {
+            padding-bottom: 3.5rem; 
+            justify-content: space-between;
+        }
     }
+
 }
 
 .contact {
@@ -593,6 +621,10 @@ main {
 
     @include tablet {
         margin-right: 4rem;
+    }
+
+    @include desktop {
+        margin-bottom: 0;
     }
 
 

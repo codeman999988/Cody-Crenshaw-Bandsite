@@ -47,12 +47,22 @@ body {
   margin: 0;
   padding: 0;
 }
+@media screen and (min-width: 1024px) {
+  body {
+    overflow-x: initial;
+  }
+}
 
 main {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+@media screen and (min-width: 1024px) {
+  main {
+    overflow-x: initial;
+  }
 }
 
 .alab {
@@ -286,7 +296,7 @@ main {
 .about__article {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4.5rem;
 }
 @media screen and (min-width: 768px) {
   .about__article {
@@ -346,6 +356,7 @@ main {
 @media screen and (min-width: 1024px) {
   .about__article-title {
     margin-left: 6rem;
+    margin-bottom: 2rem;
   }
 }
 .about__caption-author {
@@ -363,6 +374,7 @@ main {
 @media screen and (min-width: 1024px) {
   .about__caption-author {
     margin-left: 6rem;
+    margin-bottom: 3.5rem;
   }
 }
 .about__image {
@@ -401,6 +413,7 @@ main {
   .about__image-caption {
     margin-left: 6rem;
     width: 50rem;
+    margin-bottom: 2.5rem;
   }
 }
 .about__image-caption-container {
@@ -423,6 +436,7 @@ main {
   margin-bottom: 1.5rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  margin-top: 2rem;
 }
 @media screen and (min-width: 768px) {
   .about__title {
@@ -457,14 +471,15 @@ main {
             flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 @media screen and (min-width: 1024px) {
   .photos__container {
-    margin-left: 11.25rem;
+    padding-left: 11.25rem;
+    padding-right: 5rem;
     margin-bottom: 2.5rem;
   }
 }
@@ -547,7 +562,7 @@ main {
 .footer__address2 {
   font-size: 0.75rem;
   line-height: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer__address2 {
@@ -605,7 +620,7 @@ main {
 .footer__contact-company {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .footer__contact-company {
@@ -624,17 +639,22 @@ main {
   }
 }
 .footer__copyright-container {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 .footer__email {
   font-size: 0.75rem;
   line-height: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__email {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__email {
+    margin-bottom: 2.5rem;
   }
 }
 .footer__icons {
@@ -643,6 +663,9 @@ main {
   display: -ms-flexbox;
   display: flex;
   width: 9.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 2.75rem;
 }
 @media screen and (min-width: 768px) {
@@ -650,6 +673,11 @@ main {
     padding-top: 3rem;
     margin-bottom: 0;
     margin-left: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footer__icons {
+    width: 8.5rem;
   }
 }
 .footer__icon {
@@ -668,8 +696,10 @@ main {
     margin-left: 11rem;
     font-size: 1.5rem;
     line-height: 2rem;
+    justify-self: flex-end;
     -ms-flex-item-align: end;
         align-self: flex-end;
+    margin-right: 180px;
   }
 }
 .footer__title {
@@ -697,6 +727,14 @@ main {
     padding-bottom: 2rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .footer__top-container {
+    padding-bottom: 3.5rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 
 .contact {
   display: -webkit-box;
@@ -710,6 +748,11 @@ main {
 @media screen and (min-width: 768px) {
   .contact {
     margin-right: 4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .contact {
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 768px) {
