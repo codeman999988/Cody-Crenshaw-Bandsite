@@ -1,24 +1,29 @@
 @use 'variables' as *;
 
+// Media query for tablet breakpoint
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;
   }
 }
 
+// Media query for desktop breakpoint
 @mixin desktop {
   @media screen and (min-width: $desktop-breakpoint) {
     @content;
   }
 }
 
+// Media query for mobile breakpoint
 @mixin mobile {
   @media screen and (min-width: $mobile-breakpoint) {
     @content;
   }
 }
 
-// DT is used to label Desktop/Tablet Text Styles, MOB is used to label Mobile Text Styles
+// Mixins used for font-size and line-height.
+
+//DT is used to label Desktop/Tablet Text Styles, MOB is used to label Mobile Text Styles
 
 @mixin H1-MOB {
   font-size: 1.5rem;

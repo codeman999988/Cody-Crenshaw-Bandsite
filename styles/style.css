@@ -33,12 +33,12 @@
           margin-inline-end: 0;
 }
 
-ul {
-  list-style-type: none;
-}
-
 a {
   text-decoration: none;
+}
+
+address {
+  font-style: normal;
 }
 
 body {
@@ -53,38 +53,8 @@ main {
   margin: 0;
   padding: 0;
 }
-@media screen and (min-width: 1024px) {
-  header {
-    width: 100vw;
-  }
-}
-
-.alab {
-  color: #AFAFAF;
-}
-
-.white {
-  color: #FFFFFF;
-}
-
-.merc {
-  color: #E1E1E1;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.demi-bold {
-  font-weight: 500;
-}
-
-.fontreg {
-  font-weight: 400;
-}
-
-address {
-  font-style: normal;
+ul {
+  list-style-type: none;
 }
 
 .navbar {
@@ -130,6 +100,7 @@ address {
   color: #AFAFAF;
   font-size: 0.875rem;
   line-height: 1.375rem;
+  font-weight: 500;
   padding-bottom: 8px;
   position: relative;
   bottom: 6px;
@@ -155,6 +126,7 @@ address {
   .navbar__link {
     margin: 0 0 0 3.5rem;
     width: 5rem;
+    padding: 0 3.5rem;
   }
 }
 .navbar__link > a {
@@ -263,19 +235,20 @@ address {
   line-height: 2rem;
   font-weight: 700;
   width: 15.3rem;
+  color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
   .hero__header {
     font-size: 3.75rem;
     line-height: 4.25rem;
     margin-left: 1.5rem;
-    width: 70%;
+    width: 37.5rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .hero__header {
     margin-left: 11.25rem;
-    width: 50%;
+    width: 37.5rem;
   }
 }
 
@@ -309,6 +282,7 @@ address {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   margin-bottom: 2.5rem;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .about__article {
@@ -366,6 +340,7 @@ address {
   font-size: 0.875rem;
   line-height: 1.375rem;
   margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .about__article-title {
@@ -384,6 +359,7 @@ address {
   font-size: 0.875rem;
   line-height: 1.375rem;
   padding-left: 5vw;
+  font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .about__caption-author {
@@ -429,6 +405,7 @@ address {
   padding-left: 5vw;
   justify-self: center;
   max-width: 90%;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .about__image-caption {
@@ -610,26 +587,20 @@ address {
     padding-left: 12.5%;
   }
 }
-.footer__address1 {
+.footer__address1, .footer__address2 {
   font-size: 0.75rem;
   line-height: 1.25rem;
+  color: #E1E1E1;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
-  .footer__address1 {
+  .footer__address1, .footer__address2 {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
 .footer__address2 {
-  font-size: 0.75rem;
-  line-height: 1.25rem;
   margin-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .footer__address2 {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
 }
 .footer__contacts-container {
   display: -webkit-box;
@@ -674,6 +645,8 @@ address {
 .footer__contact-name {
   font-size: 0.875rem;
   line-height: 1.375rem;
+  color: #FFFFFF;
+  font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .footer__contact-name {
@@ -685,6 +658,8 @@ address {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   margin-bottom: 1rem;
+  color: #FFFFFF;
+  font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .footer__contact-company {
@@ -695,6 +670,8 @@ address {
 .footer__copyright {
   font-size: 0.75rem;
   line-height: 1.25rem;
+  color: #E1E1E1;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .footer__copyright {
@@ -724,6 +701,8 @@ address {
   font-size: 0.75rem;
   line-height: 1.25rem;
   margin-bottom: 1.5rem;
+  color: #E1E1E1;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .footer__email {
@@ -771,6 +750,10 @@ address {
     margin-right: 2rem;
   }
 }
+.footer__logo {
+  color: #FFFFFF;
+  font-weight: 400;
+}
 @media screen and (min-width: 320px) {
   .footer__logo {
     display: none;
@@ -800,6 +783,8 @@ address {
   padding-bottom: 2rem;
   position: relative;
   right: 5px;
+  color: #FFFFFF;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .footer__title {

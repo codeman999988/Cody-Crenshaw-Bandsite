@@ -35,12 +35,14 @@
     margin-inline-end: 0;
 }
 
-ul {
-    list-style-type: none;
-}
+
 
 a {
     text-decoration: none;
+}
+
+address {
+    font-style: normal;
 }
 
 body {
@@ -66,42 +68,11 @@ main {
     }
 }
 
-header {
-    @include desktop {
-        width: 100vw;
-    }
+ul {
+    list-style-type: none;
 }
 
 
-//helper classes
-
-.alab {
-    color: #AFAFAF;
-}
-
-.white {
-    color: #FFFFFF;
-}
-
-.merc {
-    color: #E1E1E1;
-}
-
-.bold {
-    font-weight: 700;
-}
-
-.demi-bold {
-    font-weight: 500;
-}
-
-.fontreg {
-    font-weight: 400;
-}
-
-address {
-    font-style: normal;
-}
 // NAVBAR
 .navbar {
     background-color: #323232;
@@ -122,15 +93,12 @@ address {
         padding-bottom: 0;
     }
 
-    @include desktop {
-    }
-
     &__link {
         display: flex;
         justify-content: center;
         color:#AFAFAF;
         @include H2-MOB;
-        // height: 29px;
+        font-weight: $demi-bold;
         padding-bottom: 8px;
         position: relative;
         bottom: 6px;
@@ -147,35 +115,26 @@ address {
             position: initial;
             @include H3-DT;
             padding: 0 .5rem;
-
         }
 
         @include desktop {
             margin: 0 0 0 3.5rem;
             width: 5rem;
+            padding: 0 3.5rem;
         }
 
         & > a {
             display: inline-block;
-            color: #AFAFAF;
+            color: $alab;
         }
 
         &--active {
-            border-bottom: 3px solid #FFFFFF;
-            font-weight: 500;
+            border-bottom: 3px solid $white;
+            font-weight: $demibold;
             
-
             & > a {
-                color: white;
+                color: $white;
             }
-        }
-
-        &--left {
-            @include desktop {
-                margin-right: 0;
-            }
-        }
-        &--right {
         }
     }
 
@@ -187,7 +146,6 @@ address {
 
 
         @include mobile {
-            // width: 100%;
             align-items: flex-start;
             padding-inline-start: 0px;
         }
@@ -200,26 +158,26 @@ address {
 }
 
 .logo {
+    display: inline-block;
+    text-align: center;
+    
     @include mobile {
-        text-align: center;
         @include H1-MOB;
-        padding-top: 1rem;
-        display: inline-block;
-        padding-bottom: 1rem;
+        padding: 1rem 0;
     }
-        @include tablet {
-            margin-left: 1.5rem;
-            padding-top: 1.5rem;
-            margin-right: 1rem;
-        }
+        
+    @include tablet {
+        margin-left: 1.5rem;
+        padding-top: 1.5rem;
+        margin-right: 1rem;
+    }
 
-        @include desktop {
-            margin-left: 11.25rem;
-        }
-
+    @include desktop {
+        margin-left: 11.25rem;
+    }
 
     & > a {
-        color: #FFFFFF;
+        color: $white;
     }
 }
 
@@ -253,16 +211,17 @@ address {
         flex-wrap: wrap;
         @include H1-MOB;
         width: 15.3rem;
+        color: $white;
 
         @include tablet {
             @include H1-hero-DT; 
             margin-left: 1.5rem;
-            width: 70%;
+            width: 37.5rem;
         }
 
         @include desktop {
             margin-left: 11.25rem;
-            width: 50%;
+            width: 37.5rem;
         }
     }
 }
@@ -290,6 +249,7 @@ address {
     &__article {
         @include H4-MOB;
         margin-bottom: 2.5rem;
+        font-weight: $fontreg;
 
         @include tablet {
             @include H4-para-DT;
@@ -300,12 +260,6 @@ address {
 
         @include desktop {
             width: 30.8%;
-        }
-
-        &--left {
-            @include tablet {
-
-            }
         }
     }
     
@@ -330,17 +284,12 @@ address {
             justify-content: flex-start;
             width: 100vw;
         }
-        @include desktop {
-            // margin-left: 11.25rem;
-
-        }
     }
 
     &__article-title {
         @include H2-MOB;
         margin-bottom: 1.5rem;
-
-
+        font-weight: $demi-bold;
 
         @include tablet {
             @include H2-DT;
@@ -348,8 +297,6 @@ address {
         }
 
         @include desktop {
-            // padding-left: 11.25rem;
-
             margin-bottom: 2rem;
         }
 
@@ -359,6 +306,7 @@ address {
         margin-bottom: 2.5rem;
         @include H2-MOB;
         padding-left: 5vw;
+        font-weight: $demi-bold;
 
         @include tablet {
             @include H3-DT;
@@ -367,9 +315,7 @@ address {
         }
 
         @include desktop {
-            // padding-left: 15rem;
             padding-left: 18.88888888%;
-
             margin-bottom: 3.5rem;
         }
     }
@@ -382,7 +328,6 @@ address {
 
         @include tablet {
             width: 93.75vw;
-            // height: 47.13541666;
             align-self: center;
             height: auto;
         }
@@ -391,7 +336,6 @@ address {
             width: 62.222222vw;
             height: auto;
             margin-bottom: 3rem;
-            // padding-left: 6rem;
         }
     }
 
@@ -402,6 +346,7 @@ address {
         padding-left: 5vw;
         justify-self: center;
         max-width: 90%;
+        font-weight: $bold;
 
         @include tablet {
             @include H2-DT;
@@ -477,12 +422,9 @@ address {
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-
         }
     
         @include desktop {
-            // padding-left: 18.888888888%;
-            // padding-right: 5rem;
             margin-bottom: 2.5rem;
             }
         }
@@ -543,18 +485,16 @@ address {
 
     &__address1 {
         @include H5-MOB;
-        
+        color: $merc;
+        font-weight: $fontreg;
         @include tablet {
             @include H4-list-DT;
         }
     }
 
     &__address2 {
-        @include H5-MOB;
+        @extend .footer__address1;
         margin-bottom: 1rem;
-        @include tablet {
-            @include H4-list-DT;
-        }
     }
 
     &__contacts-container {
@@ -576,12 +516,14 @@ address {
 
         @include tablet {
             flex-direction: column;
-            // margin-right: 3.7rem;
         }
     }
 
     &__contact-name {
         @include H2-MOB;
+        color: $white;
+        font-weight: $demi-bold;
+    
 
         @include tablet {
             @include H4-list-DT;
@@ -591,6 +533,8 @@ address {
     &__contact-company {
         @include H4-MOB;
         margin-bottom: 1rem;
+        color: $white;
+        font-weight: $demi-bold;
         @include tablet {
             @include H4-list-DT;
         }
@@ -598,6 +542,8 @@ address {
 
     &__copyright {
         @include H5-MOB;
+        color: $merc;
+        font-weight: $fontreg;
         @include tablet {
             @include H4-list-DT;
         }
@@ -620,6 +566,8 @@ address {
     &__email {
         @include H5-MOB;
         margin-bottom: 1.5rem;
+        color: $merc;
+        font-weight: $fontreg;
         @include tablet {
             @include H4-list-DT;
         }
@@ -634,7 +582,6 @@ address {
         display: flex;
         width: 8rem;
         justify-content: space-between;
-        // padding: 0 .5rem;
         margin-bottom: 2.75rem;
 
         @include tablet {
@@ -646,7 +593,6 @@ address {
 
         @include desktop {
             width: auto;
-            // padding-left: 2.5rem;
             display: inline-block;
             right: 5.5rem;
         }
@@ -661,13 +607,15 @@ address {
     }
 
     &__logo {
+        color: $white;
+        font-weight: $fontreg;
+
         @include mobile {
             display: none;
         }
         @include tablet {
             display: inline-block;
             margin-top: 3rem;
-            // margin-left: 11rem;
             @include H2-DT;
             justify-self: flex-end;
             align-self: flex-end;
@@ -685,6 +633,8 @@ address {
         padding-bottom: 2rem;
         position: relative;
         right: 5px;
+        color: $white;
+        font-weight: $bold;
 
         @include tablet {
             padding-bottom: 0;
@@ -705,7 +655,6 @@ address {
             justify-content: space-between;
         }
     }
-
 }
 
 .contact {
@@ -719,7 +668,6 @@ address {
     @include desktop {
         margin-bottom: 0;
     }
-
 
     &--right {
         @include tablet {
