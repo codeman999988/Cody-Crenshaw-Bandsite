@@ -133,7 +133,7 @@ ul {
 }
 .navbar__link > a {
   display: inline-block;
-  color: #AFAFAF;
+  color: #FAFAFA;
 }
 .navbar__link--active {
   border-bottom: 3px solid #FFFFFF;

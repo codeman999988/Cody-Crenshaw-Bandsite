@@ -120,13 +120,22 @@
       </section>
       <section class="comments">
         <div class="comments__add">
-          <h2>Join the Conversation</h2>
-          <h5>NAME</h5>
-          <img class="comment__image" src="assets/Images/Mohan-muruge.jpg" />
-          <input type="text"> Mohan Muruge </input>
-          <h5>Comment</h5>
-          <input type="text"> Add a new comment </input>
-          <button>Comment</button>
+          <h2 class="comments__title">Join the Conversation</h2>
+          <form class="comments__form">
+          <div class="comments__image-container">
+            <img class="comment__image" src="assets/Images/Mohan-muruge.jpg" /> 
+          </div>
+          <div class="comments__form-container">
+            <label class="comments__form-label" for="formName">NAME
+            </label>
+            <input class="comments__name-input" type="text" value="Mohan Muruge"> 
+            </input>
+            <label class="comments__form-label" for="formComment">COMMENT
+            </label>
+            <textarea class="comments__comment-input" type="text" name="comment-field">Add a new comment</textarea>
+            <button class="comments__button" type="submit">Comment</button>
+          </div>
+        </form>
         </div>
         <div class="comment">
             <div class="comment__top">
@@ -149,7 +158,7 @@
           <comment
             >Every time I see him shred I feel so motivated to get off my couch
             and hop on my board. He’s so talented! I wish I can ride like him
-            one day so I can really enjoy myself!TEST</comment
+            one day so I can really enjoy myself!</comment
           >
         </div>
         <div class="comment">

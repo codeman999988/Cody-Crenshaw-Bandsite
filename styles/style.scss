@@ -416,6 +416,7 @@ ul {
         flex-wrap: wrap;
         align-items: center;
         width: 100%;
+        padding-bottom: 1.5rem;
     
         @include tablet {
             flex-direction: row;
@@ -476,17 +477,75 @@ ul {
     }
 
     &__image {
-        float: left;
-        width: 2rem;
-        height: 2rem;
+        // float: left;
+        width: 3rem;
+        height: 3rem;
         border-radius: 50%;
+        margin-top: 1rem;
+
+        background-color: $silver;
         
+    }
+
+    &__image-container {
+        height: 100%;
     }
 }
 
 .comments {
     padding: 0 1rem;
+
+    &__title {
+        @include H1-MOB;
+        margin-bottom: 2.5rem;
+
+
+    }
+
+    &__form {
+        display: flex;
+        // flex-direction: column;
+    }
+
+    &__form-label {
+        display: inline-block;
+        @include H5-MOB;
+        font-weight: $demi-bold;
+        color: $silver;
+
+    }
+
+    &__form-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 1rem;
+    }
+
+    &__name-input {
+        height: 3rem;
+        padding-left: 1rem;
+        border: 3px solid $black;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+
+    }
+
+    &__comment-input {
+        height: 6rem;
+        padding-left: 1rem;
+        text-align: start;
+        background-color: $alab;
+        border: 2px solid $merc;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    &__button {
+        margin-bottom: 1rem;
+    }
 }
+
 
 
 
