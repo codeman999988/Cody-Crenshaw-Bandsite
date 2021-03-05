@@ -1,5 +1,107 @@
 @use 'partials/variables' as *;
 @use 'partials/mixins' as *;
+
+//Media Query breakpoint values
+
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+
+//Font color values
+$alab:#FAFAFA;
+$white:#FFFFFF;
+$merc:#E1E1E1;
+$black: #323232;
+$silver: #AFAFAF;
+
+//Font weight values
+$bold: 700;
+$demi-bold: 500;
+$fontreg: 400;
+
+
+// Media query for tablet breakpoint
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  // Media query for desktop breakpoint
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  // Media query for mobile breakpoint
+  @mixin mobile {
+    @media screen and (min-width: $mobile-breakpoint) {
+      @content;
+    }
+  }
+  
+  // Mixins used for font-size and line-height.
+  
+  //DT is used to label Desktop/Tablet Text Styles, MOB is used to label Mobile Text Styles
+  
+  @mixin H1-MOB {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  
+  @mixin H2-MOB {
+    font-size: .875rem;
+    line-height: 1.375rem;
+  }
+  
+  @mixin H4-MOB {
+    font-size: .8125rem;
+    line-height: 1.125rem;
+  }
+  
+  @mixin H5-MOB {
+    font-size: .75rem;
+    line-height: 1.25rem;
+  }
+  
+  @mixin H1-hero-DT {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+  
+  @mixin H1-DT {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+  
+  @mixin H2-DT {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  @mixin H3-DT {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  @mixin H4-para-DT {
+    font-size: .875rem;
+    line-height: 1.375rem;
+  }
+  
+  @mixin H4-list-DT {
+    font-size:.875rem;
+    line-height: 1.25rem;
+  }
+  
+  @mixin H5-DT {
+    font-size: .75rem;
+    line-height: 1.25rem;
+  }
+  
+
 @font-face {
     font-family: "Avenir Next";
     src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
@@ -50,10 +152,10 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    // background-color: blueviolet;
-    @include desktop {
-        // overflow-x: initial;
-    }
+
+    // @include desktop {
+
+    // }
     
 }
 
@@ -63,9 +165,9 @@ main {
     margin: 0;
     padding: 0;
     
-    @include desktop {
-        // overflow-x: initial;
-    }
+    // @include desktop {
+    //     // overflow-x: initial;
+    // }
 }
 
 ul {
@@ -470,10 +572,15 @@ ul {
 
 .comment {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $merc;
+
+
 
     &__top {
         display: flex;
+        flex-direction: column;
     }
 
     &__image {
@@ -482,29 +589,116 @@ ul {
         height: 3rem;
         border-radius: 50%;
         margin-top: 1rem;
+        margin-right: 1rem;
 
         background-color: $silver;
+
+        @include desktop {
+            margin-top: 1.5rem;
+        }
         
     }
 
     &__image-container {
         height: 100%;
     }
+
+    &__name {
+        margin-top: 1.5rem;
+        @include H4-MOB;
+        color: $black;
+        font-weight: $demi-bold;
+
+        @include tablet {
+            @include H3-DT;
+            // margin-top: 11.75rem;
+        }
+    }
+
+    &__date {
+        margin-top: 1.5rem;
+
+        @include H4-MOB;
+        color: $silver;
+
+        @include tablet {
+            margin-left: .5rem;
+            margin-top: 1.75rem;
+        }
+    }
+
+    &__name-date-cont {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        // align-items: flex-end;
+
+        @include tablet {
+            justify-content: initial;
+        }
+    }
+
+    &__content {
+        @include H4-MOB;
+
+        @include tablet {
+            @include H4-para-DT;
+        }
+
+
+    }
+    
+    &__profile-pic {
+background-image: url('../assets/Images/Mohan-muruge.jpg');
+background-size: cover;
+margin-right: 1.25rem;
+    }
 }
 
 .comments {
     padding: 0 1rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+        padding: 0 16.145833333%;
+    }
+
+    @include desktop {
+        padding: 0 31.66666666%;
+    
+    }
 
     &__title {
         @include H1-MOB;
         margin-bottom: 2.5rem;
+        align-self: flex-start;
+
+        @include tablet {
+            margin-left: -6.25rem;
+            @include H1-DT;
+
+        
+        }
+
+        @include desktop {
+            margin-bottom: 3.5rem;
+        }
+
 
 
     }
 
     &__form {
         display: flex;
-        // flex-direction: column;
+        justify-content: center;
+        border-bottom: 2px solid $merc;
+        width: 100%;
+
+
     }
 
     &__form-label {
@@ -513,36 +707,69 @@ ul {
         font-weight: $demi-bold;
         color: $silver;
 
+        @include desktop {
+            margin-bottom: .5rem;
+        }
+
     }
 
     &__form-container {
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding-left: 1rem;
+        // padding-left: 1rem;
     }
 
     &__name-input {
         height: 3rem;
         padding-left: 1rem;
-        border: 3px solid $black;
+        border: 3px solid $merc;
         border-radius: 5px;
         margin-bottom: 1rem;
+
+        &:focus {
+            outline: none;
+            border: 3px solid $black;
+        }
 
     }
 
     &__comment-input {
         height: 6rem;
-        padding-left: 1rem;
+        padding: 1rem;
         text-align: start;
         background-color: $alab;
         border: 2px solid $merc;
         border-radius: 5px;
         margin-bottom: 1rem;
+
+        @include desktop {
+            margin-bottom: 1.5rem;
+        }
+
+        &:focus {
+            outline: none;
+            border: 3px solid $black;
+        }
     }
 
     &__button {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+        background-color: $black;
+        color: $alab;
+        height: 2.5rem;
+        @include H4-MOB;
+        font-weight: $demi-bold;
+        box-shadow: none;
+        border: none;
+        border-radius: 4px;
+
+        @include tablet {
+            width: 10rem;
+            align-self: flex-end;
+            height: 3rem;
+        }
+
     }
 }
 
@@ -752,7 +979,7 @@ ul {
     }
 
     @include desktop {
-        margin-bottom: 0;
+        // margin-bottom: 0;
     }
 
     &--right {

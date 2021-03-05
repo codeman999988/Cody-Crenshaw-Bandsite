@@ -1,5 +1,107 @@
 @use 'partials/variables' as *;
 @use 'partials/mixins' as *;
+
+//Media Query breakpoint values
+
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+
+//Font color values
+$alab:#FAFAFA;
+$white:#FFFFFF;
+$merc:#E1E1E1;
+$black: #323232;
+$silver: #AFAFAF;
+
+//Font weight values
+$bold: 700;
+$demi-bold: 500;
+$fontreg: 400;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  // Media query for desktop breakpoint
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  // Media query for mobile breakpoint
+  @mixin mobile {
+    @media screen and (min-width: $mobile-breakpoint) {
+      @content;
+    }
+  }
+  
+  // Mixins used for font-size and line-height.
+  
+  //DT is used to label Desktop/Tablet Text Styles, MOB is used to label Mobile Text Styles
+  
+  @mixin H1-MOB {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  
+  @mixin H2-MOB {
+    font-size: .875rem;
+    line-height: 1.375rem;
+  }
+  
+  @mixin H4-MOB {
+    font-size: .8125rem;
+    line-height: 1.125rem;
+  }
+  
+  @mixin H5-MOB {
+    font-size: .75rem;
+    line-height: 1.25rem;
+  }
+  
+  @mixin H1-hero-DT {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+  
+  @mixin H1-DT {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+  
+  @mixin H2-DT {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  @mixin H3-DT {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  @mixin H4-para-DT {
+    font-size: .875rem;
+    line-height: 1.375rem;
+  }
+  
+  @mixin H4-list-DT {
+    font-size:.875rem;
+    line-height: 1.25rem;
+  }
+  
+  @mixin H5-DT {
+    font-size: .75rem;
+    line-height: 1.25rem;
+  }
+  
+
+
+
 @font-face {
     font-family: "Avenir Next";
     src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
@@ -245,6 +347,7 @@ ul {
 .song {
     height: 5rem;
     width: 90%;
+    border-width: 0;
     
     
     
@@ -252,7 +355,7 @@ ul {
     @include tablet {
     width: 55%;
     height: 10rem;
-    margin: 2.5rem 1.5rem;
+    // margin: 2.5rem 1.5rem;
     border-radius: 5px;
     border: none;
     background-color: $black;
@@ -276,19 +379,32 @@ ul {
 }
 
 .show__details {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid $merc;
     // display: block;
     padding: 0 1.5rem;
     width: 100%;
 
+    @include tablet{
+        display: initial;
+    }
+
+    &--DT-tab {
+        display: none;
+    }
     }
 
     .show__label {
         @include H5-MOB;
         color: $silver;
         font-weight: $demi-bold;
-        width: 25%;
+        width: 100%;
         text-align: left;
+
+        @include tablet {
+            width: 25%;
+        }
     }
 
     .align-right {
@@ -333,7 +449,14 @@ ul {
 .show__date {
     @include H4-MOB;
     font-weight: $demi-bold;
-    width: 25%;
+    width: 100%;
+    display: block;
+    
+    
+    
+    @include tablet {
+        width: 25%;
+}
 }
 
 .show__venue {
