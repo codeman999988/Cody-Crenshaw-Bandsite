@@ -713,12 +713,19 @@ margin-right: 1.25rem;
 
     }
 
+    &__container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
     &__form-container {
         display: flex;
         flex-direction: column;
         width: 100%;
         // padding-left: 1rem;
     }
+
+
 
     &__name-input {
         height: 3rem;
