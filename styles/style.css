@@ -570,15 +570,28 @@ ul {
   padding-bottom: 1.5rem;
   border-bottom: 2px solid #E1E1E1;
 }
-.comment__top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
+.comment__content {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 768px) {
+  .comment__content {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.comment__date {
+  margin-top: 1.5rem;
+  display: inline-block;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  .comment__date {
+    margin-left: 0.5rem;
+    margin-top: 1.75rem;
+  }
 }
 .comment__image {
   width: 3rem;
@@ -610,19 +623,6 @@ ul {
     line-height: 1.5rem;
   }
 }
-.comment__date {
-  margin-top: 1.5rem;
-  display: inline-block;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  color: #AFAFAF;
-}
-@media screen and (min-width: 768px) {
-  .comment__date {
-    margin-left: 0.5rem;
-    margin-top: 1.75rem;
-  }
-}
 .comment__name-date-cont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -640,20 +640,20 @@ ul {
             justify-content: initial;
   }
 }
-.comment__content {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-}
-@media screen and (min-width: 768px) {
-  .comment__content {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-  }
-}
 .comment__profile-pic {
   background-image: url("../assets/Images/Mohan-muruge.jpg");
   background-size: cover;
   margin-right: 1.25rem;
+}
+.comment__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
 .comments {
@@ -675,110 +675,6 @@ ul {
   .comments {
     padding: 0 16.145833333%;
   }
-}
-.comments__title {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-@media screen and (min-width: 768px) {
-  .comments__title {
-    margin-left: -6.25rem;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .comments__title {
-    margin-bottom: 3.5rem;
-    margin-left: -4.125rem;
-  }
-}
-.comments__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-bottom: 2px solid #E1E1E1;
-  width: 100%;
-}
-@media screen and (min-width: 1024px) {
-  .comments__form {
-    width: 36.666666666vw;
-  }
-}
-.comments__form-label {
-  display: inline-block;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  font-weight: 500;
-  color: #AFAFAF;
-}
-@media screen and (min-width: 1024px) {
-  .comments__form-label {
-    margin-bottom: 0.5rem;
-  }
-}
-.comments__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-@media screen and (min-width: 1024px) {
-  .comments__container {
-    width: 36.666666666vw;
-  }
-}
-.comments__form-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-}
-.comments__name-input {
-  height: 3rem;
-  padding-left: 1rem;
-  border: 3px solid #E1E1E1;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  background-color: #FAFAFA;
-}
-.comments__name-input:focus {
-  outline: none;
-  border: 3px solid #323232;
-  background-color: #FFFFFF;
-}
-.comments__comment-input {
-  height: 6rem;
-  padding: 1rem;
-  text-align: start;
-  background-color: #FAFAFA;
-  border: 2px solid #E1E1E1;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-@media screen and (min-width: 1024px) {
-  .comments__comment-input {
-    margin-bottom: 1.5rem;
-  }
-}
-.comments__comment-input:focus {
-  outline: none;
-  border: 3px solid #323232;
-  background-color: #FFFFFF;
 }
 .comments__button {
   margin-bottom: 2rem;
@@ -803,6 +699,110 @@ ul {
 }
 .comments__button:hover {
   background-color: black;
+}
+.comments__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+@media screen and (min-width: 1024px) {
+  .comments__container {
+    width: 36.666666666vw;
+  }
+}
+.comments__comment-input {
+  height: 6rem;
+  padding: 1rem;
+  text-align: start;
+  background-color: #FAFAFA;
+  border: 2px solid #E1E1E1;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .comments__comment-input {
+    margin-bottom: 1.5rem;
+  }
+}
+.comments__comment-input:focus {
+  outline: none;
+  border: 3px solid #323232;
+  background-color: #FFFFFF;
+}
+.comments__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 2px solid #E1E1E1;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .comments__form {
+    width: 36.666666666vw;
+  }
+}
+.comments__form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.comments__form-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 1024px) {
+  .comments__form-label {
+    margin-bottom: 0.5rem;
+  }
+}
+.comments__name-input {
+  height: 3rem;
+  padding-left: 1rem;
+  border: 3px solid #E1E1E1;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #FAFAFA;
+}
+.comments__name-input:focus {
+  outline: none;
+  border: 3px solid #323232;
+  background-color: #FFFFFF;
+}
+.comments__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+@media screen and (min-width: 768px) {
+  .comments__title {
+    margin-left: -6.25rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .comments__title {
+    margin-bottom: 3.5rem;
+    margin-left: -4.125rem;
+  }
 }
 
 .footer {
