@@ -492,6 +492,9 @@ ul {
     margin: 1rem 0;
   }
 }
+.show__button:hover {
+  background-color: black;
+}
 
 .show__structure {
   width: 100%;

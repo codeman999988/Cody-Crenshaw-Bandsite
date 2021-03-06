@@ -799,6 +799,9 @@ ul {
     height: 3rem;
   }
 }
+.comments__button:hover {
+  background-color: black;
+}
 
 .footer {
   display: -webkit-box;
