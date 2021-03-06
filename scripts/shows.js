@@ -51,21 +51,24 @@ const showsArray = [
     },
 ]
 
-// function displayShowTable(arr) {
-//     let showTableHTML = '';
-//     arr.forEach((show) => {
-//         let showTableRow = `<tr class="show__details">
-//         <td class="show__date">${show.showDate}</td>
-//         <td class="show__label">${show.showVenue}</td>
-//         <td class="show__label">${show.showCity}</td>
-//         <td class="show__label align-right"><button class="show__button">BUY TICKETS</button></td>
-//     </tr>`;
-//     showTableHTML = showTableHTML + showTableRow
-//     })
-//     // console.log(showTableHTML);
-//     const tbody = document.querySelector('.tbody');
-//     tbody.innerHTML = showTableHTML;
-//     console.log(tbody);
-// }
+function displayShowTable(arr) {
+    let showTableHTML = '';
+    arr.forEach((show) => {
+        let showTableRow = `<tr class="show__details">
+        <td class="show__header--mobile">DATE</td>
+        <td class="show__date">${show.showDate}</td>
+        <td class="show__header--mobile">VENUE</td>
+        <td class="show__label">${show.showVenue}</td>
+        <td class="show__header--mobile">LOCATION</td>
+        <td class="show__label">${show.showCity}</td>
+        <td class="show__label align-right"><button class="show__button">BUY TICKETS</button></td>
+    </tr>`;
+    showTableHTML = showTableHTML + showTableRow
+    })
+    // console.log(showTableHTML);
+    const tbody = document.querySelector('.tbody');
+    tbody.innerHTML = showTableHTML;
+    console.log(tbody);
+}
 
-// displayShowTable(showsArray);
+displayShowTable(showsArray);

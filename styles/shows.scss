@@ -417,7 +417,7 @@ ul {
         color: $black;
         width: 100%;
         text-align: left;
-        margin-bottom: 1.5rem;
+        // margin-bottom: 1.5rem;
 
         @include tablet {
             width: 25%;
@@ -444,7 +444,8 @@ ul {
 
 .shows__title {
     @include H1-MOB;
-    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
     padding-left: 1rem;
 
     @include tablet {
@@ -471,6 +472,7 @@ ul {
     font-weight: $demi-bold;
     width: 100%;
     text-align: left;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
 
     @include tablet {
@@ -485,7 +487,7 @@ ul {
     font-weight: $demi-bold;
     width: 100%;
     display: block;
-    margin-bottom: 1.5rem;
+    // margin-bottom: .5rem;
     
     
     
@@ -515,7 +517,7 @@ ul {
     border: none;
     border-radius: 5px;
     width: 100%;
-    margin-top: .5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 
     @include tablet {
@@ -542,6 +544,10 @@ ul {
     
     @include tablet {
         padding: 0 1.5rem;
+    }
+
+    @include desktop {
+        width: 58.055555555%;
     }
 }
 

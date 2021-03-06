@@ -349,7 +349,6 @@ ul {
   color: #323232;
   width: 100%;
   text-align: left;
-  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .show__label {
@@ -365,7 +364,8 @@ ul {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
   padding-left: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -405,6 +405,7 @@ ul {
   font-weight: 500;
   width: 100%;
   text-align: left;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -419,7 +420,6 @@ ul {
   font-weight: 500;
   width: 100%;
   display: block;
-  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .show__date {
@@ -451,7 +451,7 @@ ul {
   border: none;
   border-radius: 5px;
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -469,6 +469,11 @@ ul {
 @media screen and (min-width: 768px) {
   .show__structure {
     padding: 0 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .show__structure {
+    width: 58.055555555%;
   }
 }
 
