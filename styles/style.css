@@ -578,6 +578,7 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 .comment__image {
   width: 3rem;
@@ -628,6 +629,7 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 1rem;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .comment__name-date-cont {

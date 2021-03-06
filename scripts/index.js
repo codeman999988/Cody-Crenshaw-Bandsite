@@ -4,8 +4,7 @@ console.dir(formCapture);
 
 let commentArray = [];
 const answer = [];
-const commentSlot =  document.querySelector
-
+const commentSlot =  document.querySelector;
 
 formCapture.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -15,29 +14,28 @@ formCapture.addEventListener('submit', (e) => {
     // console.log(comment);
     answer.push(name);
     answer.push(comment);
-    console.log(answer);
-    console.dir(e.target);
-    console.log(e.target.timestamp);
-    console.log(submitForm(answer));
     const pusher = document.createElement("div");
     pusher.className = "comment"
     pusher.innerHTML = submitForm(answer);
     console.log(pusher);
     const commentSection = document.querySelector(".comments__container");
     commentSection.append(pusher);
-
 })
+
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleDateString());
+
 
 const submitForm = (array) => {
 return `
-
 <div class="comment__image-container">
-<img class="comment__image" />
-</div>  
+<div class="comment__image comment__profile-pic"></div>
+</div> 
 <div class="comment__top">
 <div class="comment__name-date-cont">
 <p class="comment__name">${array[0]}</p>
-<time class="comment__date" datetime="2018-12-18">12/18/2018</time>
+<time class="comment__date" datetime="2018-12-18">${date.toLocaleDateString()}</time>
 </div>    
   <p class="comment__content"
   >${array[1]}</p></div>`
