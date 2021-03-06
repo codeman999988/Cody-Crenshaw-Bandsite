@@ -312,25 +312,44 @@ ul {
       -ms-flex-direction: column;
           flex-direction: column;
   border-bottom: 1px solid #E1E1E1;
-  padding: 0 1.5rem;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
   .show__details {
-    display: initial;
+    display: table-row;
   }
 }
 .show__details--DT-tab {
   display: none;
 }
+@media screen and (min-width: 768px) {
+  .show__details--DT-tab {
+    display: table-row;
+    width: 100%;
+  }
+}
 
-.show__label {
+.show__header {
   font-size: 0.75rem;
   line-height: 1.25rem;
   color: #AFAFAF;
   font-weight: 500;
   width: 100%;
   text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .show__header {
+    width: 25%;
+  }
+}
+
+.show__label {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: #323232;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .show__label {
@@ -347,7 +366,12 @@ ul {
   line-height: 2rem;
   font-weight: 700;
   margin: 1.5rem 0;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__title {
+    padding-left: 1.5rem;
+  }
 }
 
 .show {
@@ -374,16 +398,33 @@ ul {
   }
 }
 
+.show__header--mobile {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .show__header--mobile {
+    display: none;
+  }
+}
+
 .show__date {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 500;
   width: 100%;
   display: block;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .show__date {
     width: 25%;
+    display: table-cell;
   }
 }
 
@@ -409,6 +450,9 @@ ul {
   font-weight: 500;
   border: none;
   border-radius: 5px;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .show__button {
@@ -420,8 +464,14 @@ ul {
 .show__structure {
   width: 100%;
   border-collapse: separate;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
+@media screen and (min-width: 768px) {
+  .show__structure {
+    padding: 0 1.5rem;
+  }
+}
+
 .show__label--venue {
   margin-left: 12.625rem;
 }

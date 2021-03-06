@@ -383,24 +383,41 @@ ul {
     flex-direction: column;
     border-bottom: 1px solid $merc;
     // display: block;
-    padding: 0 1.5rem;
+    // padding: 0 1.5rem;
     width: 100%;
 
     @include tablet{
-        display: initial;
+        display: table-row;
     }
 
     &--DT-tab {
         display: none;
+
+        @include tablet {
+            display:table-row;
+            width: 100%;
+        }
     }
     }
 
-    .show__label {
+    .show__header {
         @include H5-MOB;
         color: $silver;
         font-weight: $demi-bold;
         width: 100%;
         text-align: left;
+
+        @include tablet {
+            width: 25%;
+        }
+    } 
+    
+    .show__label {
+        @include H4-MOB();
+        color: $black;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1.5rem;
 
         @include tablet {
             width: 25%;
@@ -428,7 +445,11 @@ ul {
 .shows__title {
     @include H1-MOB;
     margin: 1.5rem 0;
-    padding-left: 1.5rem;;
+    padding-left: 1rem;
+
+    @include tablet {
+        padding-left: 1.5rem;
+    }
 }
 
 .show {
@@ -444,6 +465,19 @@ ul {
     }
 }
 
+.show__header--mobile {
+    @include H5-MOB;
+    color: $silver;
+    font-weight: $demi-bold;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+
+    @include tablet {
+        display: none;
+    }
+}
+
 
 
 .show__date {
@@ -451,11 +485,13 @@ ul {
     font-weight: $demi-bold;
     width: 100%;
     display: block;
+    margin-bottom: 1.5rem;
     
     
     
     @include tablet {
         width: 25%;
+        display: table-cell;
 }
 }
 
@@ -478,6 +514,9 @@ ul {
     font-weight: $demi-bold;
     border: none;
     border-radius: 5px;
+    width: 100%;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
 
     @include tablet {
         width: 10rem;
@@ -497,12 +536,12 @@ ul {
     // height: auto;
     border-collapse: separate;
     // table-layout: fixed;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     // white-space: nowrap;
     // border-spacing: 1.5rem 0;
     
     @include tablet {
-        // margin: 0 1.5rem;
+        padding: 0 1.5rem;
     }
 }
 
