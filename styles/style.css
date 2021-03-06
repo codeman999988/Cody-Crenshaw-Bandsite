@@ -750,12 +750,14 @@ ul {
   height: 3rem;
   padding-left: 1rem;
   border: 3px solid #E1E1E1;
-  border-radius: 5px;
+  border-radius: 4px;
   margin-bottom: 1rem;
+  background-color: #FAFAFA;
 }
 .comments__name-input:focus {
   outline: none;
   border: 3px solid #323232;
+  background-color: #FFFFFF;
 }
 .comments__comment-input {
   height: 6rem;
@@ -774,6 +776,7 @@ ul {
 .comments__comment-input:focus {
   outline: none;
   border: 3px solid #323232;
+  background-color: #FFFFFF;
 }
 .comments__button {
   margin-bottom: 2rem;

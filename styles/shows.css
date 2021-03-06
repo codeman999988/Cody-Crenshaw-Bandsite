@@ -368,6 +368,13 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .show__label {
+    width: 22.222222222%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .show__label {
     width: 25%;
   }
 }
@@ -387,6 +394,8 @@ ul {
 @media screen and (min-width: 768px) {
   .shows__title {
     padding-left: 1.5rem;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -444,8 +453,10 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .show__date {
-    width: 25%;
+    width: 33.3333%;
     display: table-cell;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
