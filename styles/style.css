@@ -602,6 +602,7 @@ ul {
   line-height: 1.125rem;
   color: #323232;
   font-weight: 500;
+  display: inline-block;
 }
 @media screen and (min-width: 768px) {
   .comment__name {
@@ -611,6 +612,7 @@ ul {
 }
 .comment__date {
   margin-top: 1.5rem;
+  display: inline-block;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   color: #AFAFAF;

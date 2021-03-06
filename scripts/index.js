@@ -40,10 +40,10 @@ let commentArray = [
 // }
 
 const commentSection = document.querySelector('.comments__container');
-let allComments = '';
 // const answer = [];
-// const commentSlot =  document.querySelector;
+let allComments = '';
 const displayComment = (commentObject) =>{
+
     let commentHTML = `<div class="comment"><div class="comment__image-container">
     <div class="comment__image comment__profile-pic"></div>
     </div> 
@@ -51,11 +51,11 @@ const displayComment = (commentObject) =>{
     <div class="comment__name-date-cont">
     <p class="comment__name">${commentObject.name}</p>
     <time class="comment__date" datetime="2018-12-18">${commentObject.date}</time>
-    </div>    
+    </div>   
     <p class="comment__content"
     >${commentObject.comment}</p></div></div>`;
     allComments = allComments + commentHTML;
-    commentArray.push(commentObject);
+    // commentArray.push(commentObject);
     commentSection.innerHTML = allComments;
     return allComments;
 }
@@ -75,8 +75,9 @@ formCapture.addEventListener('submit', (e) => {
         comment: commentText,
     }
     commentArray.push(newCommentObject);
-    commentSection.innerHTML = commentArray.forEach(displayComment);
+    displayComment(newCommentObject);
     console.log(commentArray);
+    formCapture.reset();
 })
 
 commentArray.forEach(displayComment);
