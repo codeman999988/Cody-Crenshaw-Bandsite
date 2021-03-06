@@ -318,7 +318,6 @@ ul {
 
         @include tablet {
             @include H1-hero-DT; 
-
             width: 37.5rem;
         }
 
@@ -327,15 +326,12 @@ ul {
             width: 37.5rem;
             display: inline-block;
         }
-
-        
     }
+
         &__album-title {
             @include H2-MOB;
             font-weight: $demi-bold;
             margin-bottom: 1.5rem;
-
-
 
             @include tablet {
                 @include H2-DT;
@@ -355,16 +351,13 @@ ul {
     border-width: 0;
     border-radius: 4px;
 
-    
-    
-    
-    
     @include tablet {
-    width: 57.5%;
-    height: 10rem;
-    border: none;
-    background-color: $black;
-}
+        width: 57.5%;
+        height: 10rem;
+        border: none;
+        background-color: $black;
+    }
+
     @include desktop {
         display: inline-block;
         width: 30.27777777vw;
@@ -372,8 +365,6 @@ ul {
         margin-left: 5rem;
     }
 }
-
-
 
 
 //SHOWS SECTION
@@ -384,76 +375,21 @@ ul {
     margin-top: 2rem;
     margin-bottom: 2.5rem;
     padding: 0 1rem;
-}
 
-.show__details {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 2px solid $merc;
-    width: 100%;
-
-    @include tablet{
-        display: table-row;
-    }
-
-    &--DT-tab {
-        display: none;
+    &__title {
+        @include H1-MOB;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+        padding-left: 1rem;
 
         @include tablet {
-            display:table-row;
-            width: 100%;
-            border-bottom: none;
-
-        }
-    }
-    }
-
-    .show__header {
-        @include H5-MOB;
-        color: $silver;
-        font-weight: $demi-bold;
-        width: 100%;
-        text-align: left;
-
-        @include tablet {
-            width: 25%;
-        }
-    } 
-    
-    .show__label {
-        @include H4-MOB();
-        color: $black;
-        width: 100%;
-        text-align: left;
-
-        @include tablet {
-            width: 22.222222222%;
-            @include H4-list-DT;
+            padding-left: 1.5rem;
+            @include H1-DT;
         }
 
         @include desktop {
-            width: 25%;
+            margin-left: 9.75rem;
         }
-    }
-
-    .align-right {
-        text-align: right;
-    }
-
-
-.shows__title {
-    @include H1-MOB;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem;
-    padding-left: 1rem;
-
-    @include tablet {
-        padding-left: 1.5rem;
-        @include H1-DT;
-    }
-
-    @include desktop {
-        margin-left: 9.75rem;
     }
 }
 
@@ -468,66 +404,137 @@ ul {
         flex-direction: row;
         justify-content: space-between;
     }
-}
 
-.show__header--mobile {
-    @include H5-MOB;
-    color: $silver;
-    font-weight: $demi-bold;
-    width: 100%;
-    text-align: left;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    &__button {
+        justify-self: center;
+        height: 3rem;
+        background-color: $black;
+        color: $white;
+        @include H4-MOB;
+        font-weight: $demi-bold;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
 
-    @include tablet {
-        display: none;
+        @include tablet {
+            width: 10rem;
+            margin: 1rem 0;
+        }
     }
-}
 
+    &__date {
+        @include H4-MOB;
+        font-weight: $demi-bold;
+        width: 100%;
+        display: block;
 
-
-.show__date {
-    @include H4-MOB;
-    font-weight: $demi-bold;
-    width: 100%;
-    display: block;
+        @include tablet {
+            width: 33.3333%;
+            display: table-cell;
+            @include H3-DT;
+        }
+    }
     
+    &__details {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid $merc;
+        width: 100%;
+
+        @include tablet{
+            display: table-row;
+        }
+
+        &--DT-tab {
+            display: none;
+
+            @include tablet {
+                display:table-row;
+                width: 100%;
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__header {
+        @include H5-MOB;
+        color: $silver;
+        font-weight: $demi-bold;
+        width: 100%;
+        text-align: left;
+
+        @include tablet {
+            width: 25%;
+        }
+
+        &--mobile {
+            @include H5-MOB;
+            color: $silver;
+            font-weight: $demi-bold;
+            width: 100%;
+            text-align: left;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+
+    &__label {
+        @include H4-MOB();
+        color: $black;
+        width: 100%;
+        text-align: left;
+
+        @include tablet {
+            width: 22.222222222%;
+            @include H4-list-DT;
+        }
     
+        @include desktop {
+            width: 25%;
+        }
     
-    @include tablet {
-        width: 33.3333%;
-        display: table-cell;
-        @include H3-DT;
-}
-}
+            &--venue {
+                margin-left: 12.625rem;
+            }
+    
+            &--location {
+                margin-left: 9.75rem;
+            }
+    }
 
-.show__venue {
-    @include H4-MOB;
-    margin-bottom: 1.5rem;
-}
+    &__location {
+        @include H4-MOB;
+        margin-bottom: 2rem;
+    }
 
-.show__location {
-    @include H4-MOB;
-    margin-bottom: 2rem;
-}
+    &__structure {
+        width: 100%;
+        border-collapse: separate;
+        padding: 0 1rem;
 
-.show__button {
-    justify-self: center;
-    height: 3rem;
-    background-color: $black;
-    color: $white;
-    @include H4-MOB;
-    font-weight: $demi-bold;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+        @include tablet {
+            margin: 0 1.5rem;
+            border-collapse: collapse;
+            padding: 0;
+            width: 93.44262295%;
+        }
 
-    @include tablet {
-        width: 10rem;
-    margin: 1rem 0;
+        @include desktop {
+            width: 58.055555555%;
+            margin-left: 31.666666666%;
+            border-collapse: collapse;
+        }
+    }
 
+    &__venue {
+        @include H4-MOB;
+        margin-bottom: 1.5rem;
     }
 
     &:hover {
@@ -535,34 +542,6 @@ ul {
     }
 }
 
-
-
-.show__structure {
-    width: 100%;
-    border-collapse: separate;
-    padding: 0 1rem;
-    
-    @include tablet {
-        margin: 0 1.5rem;
-        border-collapse: collapse;
-        padding: 0;
-        width: 93.44262295%;
-    }
-
-    @include desktop {
-        width: 58.055555555%;
-        margin-left: 31.666666666%;
-                    border-collapse: collapse;
-    }
-}
-
-.show__label--venue {
-    margin-left: 12.625rem;
-}
-
-.show__label--location {
-    margin-left: 9.75rem;
-}
 
 // FOOTER
 .footer {
@@ -572,6 +551,7 @@ ul {
     color: #AFAFAF;
     padding-left: 3.75vw;
     width: 100%;
+    margin-top: 2rem;
 
     @include tablet {
         padding-left: 1.5rem;
@@ -623,7 +603,6 @@ ul {
         @include H2-MOB;
         color: $white;
         font-weight: $demi-bold;
-    
 
         @include tablet {
             @include H4-list-DT;
@@ -647,6 +626,7 @@ ul {
         @include tablet {
             @include H4-list-DT;
         }
+
         @include desktop {
             margin: 2px;
         }
@@ -713,6 +693,7 @@ ul {
         @include mobile {
             display: none;
         }
+
         @include tablet {
             display: inline-block;
             margin-top: 3rem;
@@ -720,8 +701,8 @@ ul {
             justify-self: flex-end;
             align-self: flex-end;
             padding-right: 1.5rem;
-
         }
+
         @include desktop {
             margin-right: 12.5%;
         }
@@ -745,11 +726,12 @@ ul {
 
     &__top-container {
         @include tablet {
-        display: flex;
-        align-items: flex-end;
-        padding-bottom: 2rem;
-        justify-content: space-between;
-        }
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 2rem;
+            justify-content: space-between;
+            }
+
         @include desktop {
             padding-bottom: 3.5rem; 
             justify-content: space-between;
