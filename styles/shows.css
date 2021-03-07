@@ -231,6 +231,7 @@ ul {
     background-size: cover;
     background-repeat: round;
     display: block;
+    padding-left: 12.5vw;
   }
 }
 .hero__album-title {
@@ -256,7 +257,6 @@ ul {
 }
 @media screen and (min-width: 1024px) {
   .hero__header {
-    margin-left: 9.75rem;
     width: 37.5rem;
     display: inline-block;
   }
@@ -278,7 +278,6 @@ ul {
 @media screen and (min-width: 1024px) {
   .hero__album-title {
     display: block;
-    margin-left: 9.75rem;
   }
 }
 
@@ -301,7 +300,6 @@ ul {
     display: inline-block;
     width: 30.27777777vw;
     height: 10.1388888vw;
-    margin-left: 5rem;
   }
 }
 
