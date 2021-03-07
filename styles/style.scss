@@ -565,6 +565,12 @@ ul {
     padding-bottom: 1.5rem;
     border-bottom: 2px solid $merc;
 
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
     &__content {
         @include H4-MOB;
 
@@ -631,11 +637,12 @@ ul {
         margin-right: 1.25rem;
         }
 
-    &__top {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    &__comment-profile-pic {
+        background-size: cover;
+        margin-right: 1.25rem;
     }
+
+
 }
 
 .comments {
@@ -670,6 +677,10 @@ ul {
         &:hover {
             background-color: black;
         }
+
+        &:focus {
+            outline: none;
+        }
     }
     
     &__container {
@@ -689,6 +700,7 @@ ul {
         border: 2px solid $merc;
         border-radius: 5px;
         margin-bottom: 1rem;
+        resize: none;
 
         @include desktop {
             margin-bottom: 1.5rem;
@@ -966,4 +978,12 @@ ul {
         margin-right: 0;
         }
     }
+}
+
+#profile-pic {
+    background-image: url('../assets/Images/Mohan-muruge.jpg');
+}
+
+.profile-pic {
+    background-image: url('../assets/Images/Mohan-muruge.jpg');
 }

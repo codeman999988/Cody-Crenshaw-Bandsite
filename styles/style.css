@@ -570,6 +570,16 @@ ul {
   padding-bottom: 1.5rem;
   border-bottom: 2px solid #E1E1E1;
 }
+.comment__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
 .comment__content {
   font-size: 0.8125rem;
   line-height: 1.125rem;
@@ -645,15 +655,9 @@ ul {
   background-size: cover;
   margin-right: 1.25rem;
 }
-.comment__top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
+.comment__comment-profile-pic {
+  background-size: cover;
+  margin-right: 1.25rem;
 }
 
 .comments {
@@ -700,6 +704,9 @@ ul {
 .comments__button:hover {
   background-color: black;
 }
+.comments__button:focus {
+  outline: none;
+}
 .comments__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -722,6 +729,7 @@ ul {
   border: 2px solid #E1E1E1;
   border-radius: 5px;
   margin-bottom: 1rem;
+  resize: none;
 }
 @media screen and (min-width: 1024px) {
   .comments__comment-input {
@@ -1074,4 +1082,12 @@ ul {
   .contact--right {
     margin-right: 0;
   }
+}
+
+#profile-pic {
+  background-image: url("../assets/Images/Mohan-muruge.jpg");
+}
+
+.profile-pic {
+  background-image: url("../assets/Images/Mohan-muruge.jpg");
 }/*# sourceMappingURL=style.css.map */
