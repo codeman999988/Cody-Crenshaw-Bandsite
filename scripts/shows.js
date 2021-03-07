@@ -40,7 +40,7 @@ const showsArray = [
 ]
 
 
-//  displayShowTable takes an array as an argument (specifically the array of show objects).  It takes uses the values of the different objects, formats them into HTML that can be inserted into the table of shows, concatenates them all and inserts them into the page.
+//  displayShowTable takes an array as an argument (specifically the array of show objects).  It takes the values of the different objects, formats them into HTML that can be inserted into the table of shows, concatenates them all and inserts them into the page.
 
 function displayShowTable(arr) {
     let showTableHTML = '';
