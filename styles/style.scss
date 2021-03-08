@@ -442,6 +442,7 @@ ul {
     width: 90vw;
     height: auto;
     margin-bottom: 1rem;
+    filter: grayscale(100%);
 
     @include tablet {
         width: 29.1666666vw;
@@ -454,6 +455,10 @@ ul {
         height: 13.4027777vw;
         margin-left: 0;
         margin-right: 1.5rem;
+    }
+
+    &:hover {
+        filter: none;
     }
 }
 

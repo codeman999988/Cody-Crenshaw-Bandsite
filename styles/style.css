@@ -546,6 +546,8 @@ ul {
   width: 90vw;
   height: auto;
   margin-bottom: 1rem;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 @media screen and (min-width: 768px) {
   .photo {
@@ -561,6 +563,10 @@ ul {
     margin-left: 0;
     margin-right: 1.5rem;
   }
+}
+.photo:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 
 .comment {
