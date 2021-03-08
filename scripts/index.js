@@ -8,6 +8,7 @@ let formCapture = document.querySelector(".comments__form");
 const date = new Date();
 
 
+
 //Variable commentSection declared to identify where to insert HTML into page so comments will display line 63
 const commentSection = document.querySelector('.comments__container');
 
@@ -96,4 +97,6 @@ formCapture.addEventListener('submit', (e) => {
 
 // Invokes displayComment on each element of the Comments Array.  This loads the stored comments when the page loads.
 commentArray.forEach(displayComment);
+
+
 
