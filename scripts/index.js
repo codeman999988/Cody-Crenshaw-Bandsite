@@ -1,5 +1,9 @@
 // GLOBAL VARIABLE DECLARATIONS
 
+// {
+//     "api_key": "2e1a6531-4e3e-416c-b29c-a2de3c13c26a"
+//     }
+
 //Variable formCapture declared to capture form submissions line 64
 let formCapture = document.querySelector(".comments__form");
 

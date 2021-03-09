@@ -1,6 +1,63 @@
 //  No global variables
 
 //  The showsArray is an array of objects that is used to populate the shows table.  It is used as an argument in the displayShowTable function to populate the shows table line 45.  The addShow function can be used to add new show Objects to this array, and therefore more easily update the shows table with new shows line 81.
+let arrayOfObjects = [];
+
+const showArrayAxios = axios.get("https://project-1-api.herokuapp.com/showdates?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a")
+showArrayAxios.then(result => {
+    let showTableHTML = '';
+    console.log(result.data);
+    for(i = 0; i < result.data.length; i++) {
+        let showTableRow = `
+        <tr class="show__details">
+            <td class="show__header--mobile">DATE
+            </td>
+            <td class="show__date">${result.data[i].date}
+            </td>
+            <td class="show__header--mobile">VENUE</td>
+            <td class="show__label">${result.data[i].place}
+            </td>
+            <td class="show__header--mobile">LOCATION
+            </td>
+            <td class="show__label">${result.data[i].location}
+            </td>
+            <td class="show__label align-right">
+                <button class="show__button">BUY TICKETS
+                </button>
+            </td>
+        </tr>`;
+    showTableHTML = showTableHTML + showTableRow;
+}
+const tbody = document.querySelector('.tbody');
+tbody.innerHTML = showTableHTML;
+});
+
+
+    // console.log(result.data[0].date);
+    // console.log(typeof result.data);
+    // console.log(result.data.length);
+
+
+
+
+
+    // realShowsArray = result.data;
+    // console.log(typeof result.data);
+    // const json_object = JSON.parse(realShowsArray);
+    // console.log(json_object);
+    // realShowsArray.forEach(show => {
+    //     arrayOfObjects.push(show)
+    // })
+
+// })
+// .catch(error => {
+//     console.log(error);
+// });
+
+// console.log(arrayOfObjects);
+// console.log(typeof arrayOfObjects);
+// console.log(arrayOfObjects.parse);
+// console.log(typeof arrayOfObjects);
 const showsArray = [
     {
         showDate: "Mon Dec 17 2018",
@@ -49,14 +106,14 @@ function displayShowTable(arr) {
         <tr class="show__details">
             <td class="show__header--mobile">DATE
             </td>
-            <td class="show__date">${show.showDate}
+            <td class="show__date">${show.date}
             </td>
             <td class="show__header--mobile">VENUE</td>
-            <td class="show__label">${show.showVenue}
+            <td class="show__label">${show.place}
             </td>
             <td class="show__header--mobile">LOCATION
             </td>
-            <td class="show__label">${show.showCity}
+            <td class="show__label">${show.location}
             </td>
             <td class="show__label align-right">
                 <button class="show__button">BUY TICKETS
@@ -70,7 +127,7 @@ function displayShowTable(arr) {
 }
 
 //  Calling the displayShowTable function in order to populate the shows table with shows on page load.
-displayShowTable(showsArray);
+// displayShowTable(showArrayAxios);
 
 
 //  Constructor function used in addShow to add new show objects to the showsArray.
