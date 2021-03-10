@@ -1,5 +1,4 @@
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
+@use 'variables' as *;
 @font-face {
   font-family: "Avenir Next";
   src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
