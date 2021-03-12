@@ -1,6 +1,5 @@
-
-@import 'partials/variables';
-@import 'partials/mixins';
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
 
 @font-face {
     font-family: "Avenir Next";
@@ -592,6 +591,11 @@ ul {
         }
     }
 
+    &__delete-btn {
+        display: inline-block;
+        
+    }
+
     &__image {
         width: 3rem;
         height: 3rem;
@@ -607,6 +611,22 @@ ul {
 
     &__image-container {
         height: 100%;
+    }
+
+    &__like-btn {
+        display: inline-block;
+        // width: 3rem;
+        background-color: $white;
+        border: none;
+        color: red;
+        align-self: flex-end;
+    }
+
+    &__like-btn-form {
+        display: inline-block;
+        // align-self: flex-end;
+        // justify-self: flex-end;
+        text-align: right;
     }
 
     &__name {

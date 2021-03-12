@@ -6,6 +6,7 @@
 
 //Variable formCapture declared to capture form submissions line 64
 let formCapture = document.querySelector(".comments__form");
+let likeButtons = document.getElementsByClassName("comment__like-btn");
 
 
 //Variable date declared in order to add accurate Date in comments and and accurate datetime attributes
@@ -92,7 +93,7 @@ formCapture.addEventListener('submit', (e) => {
     }
     console.log(commentObj)
     const url = "https://project-1-api.herokuapp.com/comments?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a"
-    axios.post(url, commentObj,headHeaders).then(res => {
+    axios.post(url, commentObj, headHeaders).then(res => {
         letsGo();
     e.target.reset()
     })
@@ -157,31 +158,116 @@ formCapture.addEventListener('submit', (e) => {
 
 // // Invokes displayComment on each element of the Comments Array.  This loads the stored comments when the page loads.
 // // commentArray.forEach(displayComment);
+function addLike(e){
+    e.preventDefault();
+    
+    axios.put(`https://project-1-api.herokuapp.com/comments/${e.target.id}/like?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
+    .then( (result) => {
+    
+    console.log(result);
+    console.log(e.target);
+    e.target.innerText = `♥ ${result.data.likes} likes`;
+    e.target.disabled = true;})
+    .catch((error) => {
+        console.error(error);
+    })
 
+}
 
-function letsGo(){axios.get("https://project-1-api.herokuapp.com/comments?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a")
-.then(result => {
-    let commentsHTML = '';
-    for(i = 0; i < result.data.length; i++) {
-    let commentHTML = 
-    `<div class="comment">
-        <div class="comment__image-container">
-            <div class="comment__image comment__comment-profile-pic">
+function letsGo(){axios
+    .get("https://project-1-api.herokuapp.com/comments?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a")
+    .then(result => {
+        let commentsHTML = '';
+        for(i = 0; i < result.data.length; i++) {
+        let commentHTML = 
+        `<div class="comment">
+            <div class="comment__image-container">
+                <div class="comment__image comment__comment-profile-pic">
+                </div>
             </div>
-        </div>
-        <div class="comment__container">
-            <div class="comment__name-date-cont">
-                <p class="comment__name">${result.data[i].name}
+            <div class="comment__container">
+                <div class="comment__name-date-cont">
+                    <p class="comment__name">${result.data[i].name}
+                    </p>
+                    <time class="comment__date" datetime="">${result.data[i].timestamp}
+                    </time>
+                </div> 
+            
+                <p class="comment__content">${result.data[i].comment}
                 </p>
-                <time class="comment__date" datetime="">${result.data[i].timestamp}
-                </time>
-            </div> 
-            <p class="comment__content">${result.data[i].comment}
-            </p>
-        </div>
-    </div>`;
+                <button type="submit" class="comment__delete-btn" id="">Delete comment</button>
+                <button type="submit" class="comment__like-btn" id="${result.data[i].id}">♡ ${result.data[i].likes} likes</button>
+            </div>
+        </div>`;
 commentsHTML = commentsHTML + commentHTML;
     }
 commentSection.innerHTML = commentsHTML;
-})}
-letsGo()
+}
+
+).then( function(){
+    for(i=0; i < likeButtons.length; i++){
+        likeButtons[i].addEventListener('click', addLike);
+    }
+})
+}
+
+letsGo();
+
+// function addLike(){
+//     e.preventDefault();
+//     console.log(e.target);
+//     e.target.innerText = `♥`
+//     e.target.disabled = true;
+
+// }
+
+
+
+console.log(likeButtons[0])
+// const likeButtonsListener = (arr) => {
+    // for(i=0; i < likeButtons.length; i++) {
+    // console.log(likeButtons[i]);
+    
+    
+        // [i].addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     console.log(e.target);
+    //     console.log(e)
+//     })
+// }}
+
+
+
+// })
+
+
+
+// const buttonTime = function(obj){
+//     obj.forEach(function(el){
+//         console.log(el);
+//     })
+// }
+
+// buttonTime(likeButtons);
+
+// .forEach(button => {
+//     addEventListener('click', (e) => {
+//         e.preventDefault();
+//         console.log(e.target);
+// })
+
+
+// })
+
+
+
+// likeButtons.forEach(button => {
+//     button.addEventListener('submit', (e) => {
+//         e.preventDefault();
+
+//         // 
+//     })
+// })
+
+
+// ♥
