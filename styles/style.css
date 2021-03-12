@@ -576,6 +576,15 @@ ul {
   padding-bottom: 1.5rem;
   border-bottom: 2px solid #E1E1E1;
 }
+.comment__btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1rem;
+}
 .comment__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -611,6 +620,20 @@ ul {
 }
 .comment__delete-btn {
   display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border: none;
+  padding: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #323232;
+  color: #FAFAFA;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  border-radius: 4px;
 }
 .comment__image {
   width: 3rem;
@@ -633,12 +656,20 @@ ul {
   background-color: #FFFFFF;
   border: none;
   color: red;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
-.comment__like-btn-form {
-  display: inline-block;
+.comment__like-btn-cont {
+  display: inline;
+  color: red;
   text-align: right;
+}
+.comment__likes-text {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 .comment__name {
   margin-top: 1.5rem;

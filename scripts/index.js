@@ -7,7 +7,7 @@
 //Variable formCapture declared to capture form submissions line 64
 let formCapture = document.querySelector(".comments__form");
 let likeButtons = document.getElementsByClassName("comment__like-btn");
-
+let deleteButtons =  document.getElementsByClassName("comment__delete-btn");
 
 //Variable date declared in order to add accurate Date in comments and and accurate datetime attributes
 const date = new Date();
@@ -161,17 +161,33 @@ formCapture.addEventListener('submit', (e) => {
 function addLike(e){
     e.preventDefault();
     
-    axios.put(`https://project-1-api.herokuapp.com/comments/${e.target.id}/like?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
+    axios.put(`https://project-1-api.herokuapp.com/comments/${e.target.name}/like?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
     .then( (result) => {
     
     console.log(result);
     console.log(e.target);
-    e.target.innerText = `♥ ${result.data.likes} likes`;
+
+    e.target.parentElement.innerHTML = `<button type="submit" class="comment__like-btn" name="${result.data.id}">♥
+    </button> ${result.data.likes} likes`;
     e.target.disabled = true;})
     .catch((error) => {
         console.error(error);
     })
+}
 
+function deleteComment(e){
+    e.preventDefault();
+    console.log(e.target.name);
+    axios.delete(`https://project-1-api.herokuapp.com/comments/${e.target.name}?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
+    .then((result) => {
+        console.log(result)
+    }).then(() => {
+        letsGo();
+    })
+    
+    .catch((error) => {
+        console.error(error);
+    })
 }
 
 function letsGo(){axios
@@ -195,8 +211,12 @@ function letsGo(){axios
             
                 <p class="comment__content">${result.data[i].comment}
                 </p>
-                <button type="submit" class="comment__delete-btn" id="">Delete comment</button>
-                <button type="submit" class="comment__like-btn" id="${result.data[i].id}">♡ ${result.data[i].likes} likes</button>
+                <div class="comment__btn-container"><button type="submit" class="comment__delete-btn" name="${result.data[i].id}">Delete comment</button>
+                <div class='comment__like-btn-cont'>
+                <button type="submit" class="comment__like-btn" name="${result.data[i].id}">♡
+                </button> ${result.data[i].likes} likes
+                </div>
+                </div>
             </div>
         </div>`;
 commentsHTML = commentsHTML + commentHTML;
@@ -207,6 +227,11 @@ commentSection.innerHTML = commentsHTML;
 ).then( function(){
     for(i=0; i < likeButtons.length; i++){
         likeButtons[i].addEventListener('click', addLike);
+    }
+})
+.then( function(){
+    for(i=0; i<deleteButtons.length; i++){
+        deleteButtons[i].addEventListener('click', deleteComment)
     }
 })
 }
@@ -223,7 +248,6 @@ letsGo();
 
 
 
-console.log(likeButtons[0])
 // const likeButtonsListener = (arr) => {
     // for(i=0; i < likeButtons.length; i++) {
     // console.log(likeButtons[i]);

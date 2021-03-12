@@ -22,101 +22,6 @@
     font-style: normal;
 }
 
-// $mobile-breakpoint: 320px;
-// $tablet-breakpoint: 768px;
-// $desktop-breakpoint: 1024px;
-
-// //Font color values
-// $alab:#FAFAFA;
-// $white:#FFFFFF;
-// $merc:#E1E1E1;
-// $black: # 323232; 
-// $silver: #AFAFAF;
-
-// //Font weight values
-// $bold: 700;
-// $demi-bold: 500;
-// $fontreg: 400;
-
-// @mixin tablet {
-//     @media screen and (min-width: $tablet-breakpoint) {
-//       @content;
-//     }
-//   }
-  
-//   // Media query for desktop breakpoint
-//   @mixin desktop {
-//     @media screen and (min-width: $desktop-breakpoint) {
-//       @content;
-//     }
-//   }
-  
-//   // Media query for mobile breakpoint
-//   @mixin mobile {
-//     @media screen and (min-width: $mobile-breakpoint) {
-//       @content;
-//     }
-//   }
-
-//   // Mixins used for font-size and line-height.
-
-// //DT is used to label Desktop/Tablet Text Styles, MOB is used to label Mobile Text Styles
-
-// @mixin H1-MOB {
-//     font-size: 1.5rem;
-//     line-height: 2rem;
-//     font-weight: 700;
-//   }
-  
-//   @mixin H2-MOB {
-//     font-size: .875rem;
-//     line-height: 1.375rem;
-//   }
-  
-//   @mixin H4-MOB {
-//     font-size: .8125rem;
-//     line-height: 1.125rem;
-//   }
-  
-//   @mixin H5-MOB {
-//     font-size: .75rem;
-//     line-height: 1.25rem;
-//   }
-  
-//   @mixin H1-hero-DT {
-//     font-size: 3.75rem;
-//     line-height: 4.25rem;
-//   }
-  
-//   @mixin H1-DT {
-//     font-size: 2.25rem;
-//     line-height: 2.75rem;
-//   }
-  
-//   @mixin H2-DT {
-//     font-size: 1.5rem;
-//     line-height: 2rem;
-//   }
-  
-//   @mixin H3-DT {
-//     font-size: 1rem;
-//     line-height: 1.5rem;
-//   }
-  
-//   @mixin H4-para-DT {
-//     font-size: .875rem;
-//     line-height: 1.375rem;
-//   }
-  
-//   @mixin H4-list-DT {
-//     font-size:.875rem;
-//     line-height: 1.25rem;
-//   }
-  
-//   @mixin H5-DT {
-//     font-size: .75rem;
-//     line-height: 1.25rem;
-//   }
 
 
 // PAGE RESET
@@ -565,6 +470,11 @@ ul {
     padding-bottom: 1.5rem;
     border-bottom: 2px solid $merc;
 
+    &__btn-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+    }
     &__container {
         display: flex;
         flex-direction: column;
@@ -593,7 +503,18 @@ ul {
 
     &__delete-btn {
         display: inline-block;
-        
+        // width: 50%;
+        align-self: flex-start;
+        border: none;
+        padding:0;
+        width: fit-content;
+        background-color: $black;
+        color: $alab;
+        @include H5-MOB;
+        font-weight: $demi-bold;
+        padding: 0 .5rem;
+        border-radius: 4px;
+
     }
 
     &__image {
@@ -619,14 +540,20 @@ ul {
         background-color: $white;
         border: none;
         color: red;
+        width: fit-content;
         align-self: flex-end;
     }
 
-    &__like-btn-form {
-        display: inline-block;
+    &__like-btn-cont {
+        display: inline;
         // align-self: flex-end;
         // justify-self: flex-end;
+        color: red;
         text-align: right;
+    }
+
+    &__likes-text {
+        align-self: flex-end;
     }
 
     &__name {
