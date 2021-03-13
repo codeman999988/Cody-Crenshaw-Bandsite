@@ -355,8 +355,8 @@ ul {
 
         &__image-caption-container {
             @include H2-MOB;
-            display: flex;
-            flex-direction: column;
+            @include flexCol;
+            
             
             @include tablet {
                 align-self: flex-start;
@@ -402,9 +402,10 @@ ul {
     }
 
     &__container {
+        @include flexCol;
         background-color: #FAFAFA;
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         width: 100%;
@@ -476,8 +477,7 @@ ul {
         padding-top: 1rem;
     }
     &__container {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         width: 100%;
     }
 
@@ -594,10 +594,9 @@ ul {
 }
 
 .comments {
+    @include flexCol;
     padding: 0 1rem;
     margin-bottom: 2.5rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     width: 100%;
 
@@ -673,8 +672,7 @@ ul {
     }
 
     &__form-container {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         width: 100%;
     }
 
@@ -724,8 +722,7 @@ ul {
 
 // FOOTER
 .footer {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     background-color: #323232;
     color: #AFAFAF;
     padding-left: 3.75vw;
@@ -754,8 +751,7 @@ ul {
     }
 
     &__contacts-container {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         position: relative;
         right: 5px;
 
@@ -767,12 +763,7 @@ ul {
     }
 
     &__contact {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-            flex-direction: column;
-        }
+        @include flexCol;
     }
 
     &__contact-name {
@@ -824,6 +815,7 @@ ul {
         margin-bottom: 1.5rem;
         color: $merc;
         font-weight: $fontreg;
+        
         @include tablet {
             @include H4-list-DT;
         }
@@ -914,8 +906,7 @@ ul {
 }
 
 .contact {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
 
     @include tablet {
         margin-right: 4rem;

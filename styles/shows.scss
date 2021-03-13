@@ -2,104 +2,6 @@
 @use 'partials/mixins' as *;
 
 
-//Media Query breakpoint values
-
-// $mobile-breakpoint: 320px;
-// $tablet-breakpoint: 768px;
-// $desktop-breakpoint: 1024px;
-
-// //Font color values
-// $alab:#FAFAFA;
-// $white:#FFFFFF;
-// $merc:#E1E1E1;
-// $black: #323232;
-// $silver: #AFAFAF;
-
-// //Font weight values
-// $bold: 700;
-// $demi-bold: 500;
-// $fontreg: 400;
-
-// @mixin tablet {
-//     @media screen and (min-width: $tablet-breakpoint) {
-//       @content;
-//     }
-//   }
-  
-//   // Media query for desktop breakpoint
-//   @mixin desktop {
-//     @media screen and (min-width: $desktop-breakpoint) {
-//       @content;
-//     }
-//   }
-  
-//   // Media query for mobile breakpoint
-//   @mixin mobile {
-//     @media screen and (min-width: $mobile-breakpoint) {
-//       @content;
-//     }
-//   }
-
-//   // Mixins used for font-size and line-height.
-
-// //DT is used to label Desktop/Tablet Text Styles, MOB is used to label Mobile Text Styles
-
-// @mixin H1-MOB {
-//     font-size: 1.5rem;
-//     line-height: 2rem;
-//     font-weight: 700;
-//   }
-  
-//   @mixin H2-MOB {
-//     font-size: .875rem;
-//     line-height: 1.375rem;
-//   }
-  
-//   @mixin H4-MOB {
-//     font-size: .8125rem;
-//     line-height: 1.125rem;
-//   }
-  
-//   @mixin H5-MOB {
-//     font-size: .75rem;
-//     line-height: 1.25rem;
-//   }
-  
-//   @mixin H1-hero-DT {
-//     font-size: 3.75rem;
-//     line-height: 4.25rem;
-//   }
-  
-//   @mixin H1-DT {
-//     font-size: 2.25rem;
-//     line-height: 2.75rem;
-//   }
-  
-//   @mixin H2-DT {
-//     font-size: 1.5rem;
-//     line-height: 2rem;
-//   }
-  
-//   @mixin H3-DT {
-//     font-size: 1rem;
-//     line-height: 1.5rem;
-//   }
-  
-//   @mixin H4-para-DT {
-//     font-size: .875rem;
-//     line-height: 1.375rem;
-//   }
-  
-//   @mixin H4-list-DT {
-//     font-size:.875rem;
-//     line-height: 1.25rem;
-//   }
-  
-//   @mixin H5-DT {
-//     font-size: .75rem;
-//     line-height: 1.25rem;
-//   }
-
 @font-face {
     font-family: "Avenir Next";
     src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
@@ -272,12 +174,11 @@ ul {
 
 // HERO
 .hero {
+    @include flexCol;
     background-image: url("../assets/CODY-IMAGES/efe-kurnaz-RnCPiXixooY-unsplash.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     background-blend-mode: overlay;
     background-size: cover;
     height: 29.5rem;
-    display: flex;
-    flex-direction: column;
     width: 100%;
     background-repeat: round;
     padding-top: 4rem;
@@ -363,8 +264,7 @@ ul {
 //SHOWS SECTION
 
 .shows {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     margin-top: 2rem;
     margin-bottom: 2.5rem;
     padding: 0 1rem;
@@ -431,8 +331,7 @@ ul {
     }
     
     &__details {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         border-bottom: 2px solid $merc;
         width: 100%;
 
@@ -538,10 +437,9 @@ ul {
 
 // FOOTER
 .footer {
-    display: flex;
-    flex-direction: column;
-    background-color: #323232;
-    color: #AFAFAF;
+    @include flexCol;
+    background-color: $black;
+    color: $silver;
     padding-left: 3.75vw;
     width: 100%;
     margin-top: 2rem;
@@ -571,8 +469,7 @@ ul {
     }
 
     &__contacts-container {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         position: relative;
         right: 5px;
 
@@ -584,12 +481,7 @@ ul {
     }
 
     &__contact {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-            flex-direction: column;
-        }
+        @include flexCol;
     }
 
     &__contact-name {
@@ -651,7 +543,7 @@ ul {
     }
 
     &__icons {
-        color: #AFAFAF;
+        color: $silver;
         display: flex;
         width: 8rem;
         justify-content: space-between;
@@ -733,8 +625,7 @@ ul {
 }
 
 .contact {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
 
     @include tablet {
         margin-right: 4rem;

@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/moment.js"></script>
-    <!-- <script>
-      moment().format();
-  </script> -->
   </head>
   <body>
     <header>
@@ -111,7 +108,8 @@
           <h2 class="comments__title">Join the Conversation</h2>
           <form class="comments__form" enctype="application/json">
             <div class="comments__image-container" >
-              <div class="comment__image comment__profile-pic profile-pic" id="profile-pic"></div></div>
+              <div class="comment__image comment__profile-pic profile-pic" id="profile-pic">
+              </div>
             </div>
           <div class="comments__form-container">
             <label class="comments__form-label" for="formName">NAME
@@ -119,12 +117,13 @@
             <input class="comments__name-input" type="text" placeholder="Name" name="name" /> 
             <label class="comments__form-label" for="formComment">COMMENT
             </label>
-            <textarea class="comments__comment-input" type="text" name="commentField" placeholder="Add a new comment"></textarea>
+            <textarea class="comments__comment-input" type="text" name="commentField" placeholder="Add a new comment">
+            </textarea>
             <button class="comments__button" type="submit">COMMENT</button>
           </div>
         </form>
         <div class="comments__container">
-  </div>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -166,9 +165,9 @@
         </div>
         <div class="contact contact--right">
           <div class="footer__contact">
-            <h3 class="footer__contact-name">Russel Warby</h3>
-            <h3 class="footer__contact-company">
-              William Morrir Entertainment
+            <h3 class="footer__contact-name">Russel Warby
+            </h3>
+            <h3 class="footer__contact-company">William Morrir Entertainment
             </h3>
           </div>
           <address class="footer__address-container">
@@ -176,8 +175,8 @@
             <p class="footer__address2">UK / EU / AU</p>
           </address>
           <a href="mailto:RLW@wmeentertainment.com" class="footer__email"
-            >RLW@wmeentertainment.com</a
-          >
+            >RLW@wmeentertainment.com
+            </a>
         </div>
       </div>
       <div class="footer__copyright-container">
