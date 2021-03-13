@@ -1,5 +1,7 @@
 // GLOBAL VARIABLE DECLARATIONS
 
+moment().format();
+
 // {
 //     "api_key": "2e1a6531-4e3e-416c-b29c-a2de3c13c26a"
 //     }
@@ -13,7 +15,9 @@ let deleteButtons =  document.getElementsByClassName("comment__delete-btn");
 const date = new Date();
 console.log(date);
 console.log(Date.now());
-
+let timeNow = moment(Date.now()).fromNow();
+console.log(moment());
+console.log(timeNow);
 
 
 //Variable commentSection declared to identify where to insert HTML into page so comments will display line 63
@@ -205,7 +209,7 @@ function letsGo(){axios
                 <div class="comment__name-date-cont">
                     <p class="comment__name">${result.data[i].name}
                     </p>
-                    <time class="comment__date" datetime="">${result.data[i].timestamp}
+                    <time class="comment__date" datetime="">${moment(result.data[i].timestamp).fromNow()}
                     </time>
                 </div> 
             
