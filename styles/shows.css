@@ -37,18 +37,7 @@ a {
   text-decoration: none;
 }
 
-address {
-  font-style: normal;
-}
-
 body {
-  width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-main {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -60,20 +49,20 @@ ul {
 }
 
 .navbar {
-  background-color: #323232;
-  width: 100%;
-  color: #AFAFAF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #323232;
+  width: 100%;
+  color: #AFAFAF;
   padding-bottom: 0.5rem;
 }
 @media screen and (min-width: 320px) {
   .navbar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     height: 5rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -561,9 +550,6 @@ ul {
 }
 @media screen and (min-width: 768px) {
   .footer__contacts-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -638,9 +624,9 @@ ul {
 .footer__email {
   font-size: 0.75rem;
   line-height: 1.25rem;
-  margin-bottom: 1.5rem;
   color: #E1E1E1;
   font-weight: 400;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__email {

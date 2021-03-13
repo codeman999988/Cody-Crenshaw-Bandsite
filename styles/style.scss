@@ -37,25 +37,11 @@
     margin-inline-end: 0;
 }
 
-
-
 a {
     text-decoration: none;
 }
 
-address {
-    font-style: normal;
-}
-
 body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    
-}
-
-main {
     width: 100%;
     overflow-x: hidden;
     margin: 0;
@@ -132,12 +118,10 @@ ul {
         }
     }
 
-
     &__link-container {
         width: 100%;
         display: flex;
         justify-content: flex-end;
-
 
         @include mobile {
             align-items: flex-start;
@@ -542,12 +526,14 @@ ul {
         color: red;
         width: fit-content;
         align-self: flex-end;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__like-btn-cont {
         display: inline;
-        // align-self: flex-end;
-        // justify-self: flex-end;
         color: red;
         text-align: right;
     }
@@ -589,8 +575,6 @@ ul {
         background-size: cover;
         margin-right: 1.25rem;
     }
-
-
 }
 
 .comments {
@@ -629,7 +613,7 @@ ul {
             outline: none;
         }
     }
-    
+
     &__container {
         display: flex;
         flex-direction: column-reverse;
@@ -738,8 +722,7 @@ ul {
 
     &__address1 {
         @include H5-MOB;
-        color: $merc;
-        font-weight: $fontreg;
+        @include mercRegFont;
         @include tablet {
             @include H4-list-DT;
         }
@@ -770,7 +753,6 @@ ul {
         @include H2-MOB;
         color: $white;
         font-weight: $demi-bold;
-    
 
         @include tablet {
             @include H4-list-DT;
@@ -789,8 +771,7 @@ ul {
 
     &__copyright {
         @include H5-MOB;
-        color: $merc;
-        font-weight: $fontreg;
+        @include mercRegFont;
         @include tablet {
             @include H4-list-DT;
         }
@@ -812,10 +793,9 @@ ul {
 
     &__email {
         @include H5-MOB;
+        @include mercRegFont;
         margin-bottom: 1.5rem;
-        color: $merc;
-        font-weight: $fontreg;
-        
+
         @include tablet {
             @include H4-list-DT;
         }
@@ -826,7 +806,7 @@ ul {
     }
 
     &__icons {
-        color: #AFAFAF;
+        color: $silver;
         display: flex;
         width: 8rem;
         justify-content: space-between;
@@ -849,6 +829,7 @@ ul {
     &__icon {
         width: 1.5rem;
         height: 1.5rem;
+
         @include desktop {
             margin-right: 2rem;
         }
@@ -861,6 +842,7 @@ ul {
         @include mobile {
             display: none;
         }
+
         @include tablet {
             display: inline-block;
             margin-top: 3rem;
@@ -887,7 +869,6 @@ ul {
         @include tablet {
             padding-bottom: 0;
             position: initial;
-
         }
     }
 
@@ -898,6 +879,7 @@ ul {
         padding-bottom: 2rem;
         justify-content: space-between;
         }
+
         @include desktop {
             padding-bottom: 3.5rem; 
             justify-content: space-between;
@@ -923,6 +905,3 @@ ul {
     background-image: url('../assets/Images/Mohan-muruge.jpg');
 }
 
-.profile-pic {
-    background-image: url('../assets/Images/Mohan-muruge.jpg');
-}

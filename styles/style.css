@@ -37,18 +37,7 @@ a {
   text-decoration: none;
 }
 
-address {
-  font-style: normal;
-}
-
 body {
-  width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-main {
   width: 100%;
   overflow-x: hidden;
   margin: 0;
@@ -662,6 +651,9 @@ ul {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
+.comment__like-btn:focus {
+  outline: none;
+}
 .comment__like-btn-cont {
   display: inline;
   color: red;
@@ -993,9 +985,9 @@ ul {
 .footer__email {
   font-size: 0.75rem;
   line-height: 1.25rem;
-  margin-bottom: 1.5rem;
   color: #E1E1E1;
   font-weight: 400;
+  margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 768px) {
   .footer__email {
@@ -1129,9 +1121,5 @@ ul {
 }
 
 #profile-pic {
-  background-image: url("../assets/Images/Mohan-muruge.jpg");
-}
-
-.profile-pic {
   background-image: url("../assets/Images/Mohan-muruge.jpg");
 }/*# sourceMappingURL=style.css.map */

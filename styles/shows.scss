@@ -28,7 +28,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #323232;
+    color: $black;
     font-family: "Avenir Next", cursive;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -40,18 +40,8 @@ a {
     text-decoration: none;
 }
 
-address {
-    font-style: normal;
-}
 
 body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-main {
     width: 100%;
     overflow-x: hidden;
     margin: 0;
@@ -65,14 +55,13 @@ ul {
 
 // NAVBAR
 .navbar {
-    background-color: #323232;
+    @include flexCol;
+    background-color: $black;
     width: 100%;
-    color: #AFAFAF;
-    display: flex;
+    color: $silver;
     padding-bottom: .5rem;
     
     @include mobile {
-        flex-direction: column;
         height: 5rem;
         justify-content: center;
     }
@@ -287,8 +276,7 @@ ul {
 }
 
 .show {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     padding-bottom: 1rem;
     padding-top: 1.5rem;
     border-bottom: 1px solid $merc;
@@ -456,8 +444,7 @@ ul {
 
     &__address1 {
         @include H5-MOB;
-        color: $merc;
-        font-weight: $fontreg;
+        @include mercRegFont;
         @include tablet {
             @include H4-list-DT;
         }
@@ -474,7 +461,6 @@ ul {
         right: 5px;
 
         @include tablet {
-            display: flex;
             flex-direction: row;
             position: initial;
         }
@@ -506,8 +492,7 @@ ul {
 
     &__copyright {
         @include H5-MOB;
-        color: $merc;
-        font-weight: $fontreg;
+        @include mercRegFont;
         @include tablet {
             @include H4-list-DT;
         }
@@ -530,9 +515,9 @@ ul {
 
     &__email {
         @include H5-MOB;
+        @include mercRegFont;
         margin-bottom: 1.5rem;
-        color: $merc;
-        font-weight: $fontreg;
+        
         @include tablet {
             @include H4-list-DT;
         }

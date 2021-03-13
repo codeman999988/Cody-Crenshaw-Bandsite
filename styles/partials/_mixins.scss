@@ -80,3 +80,18 @@
   font-size: .75rem;
   line-height: 1.25rem;
 }
+
+//Other mixins
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin mercRegFont {
+  color: $merc;
+  font-weight: $fontreg;
+}
+
+
+
