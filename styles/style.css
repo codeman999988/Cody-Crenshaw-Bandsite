@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @font-face {
   font-family: "Avenir Next";
   src: url("../assets/Fonts/AvenirNextProLT/AvenirNextLTPro-Bold.otf");
@@ -22,7 +23,7 @@
   margin: 0;
   padding: 0;
   color: #323232;
-  font-family: "Avenir Next", cursive;
+  font-family: "Avenir Next", "Roboto", cursive;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
