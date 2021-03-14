@@ -1,192 +1,65 @@
 // GLOBAL VARIABLE DECLARATIONS
 
-moment().format();
+//These variables are used to select elements on the page.  formCapture is used to capture the results of a submitted comment, likeButtons selects the like buttons on comments, deleteButtons selects the delete buttons on comments, and commentSection selects the container that new comments will be displayed in.
 
-// {
-//     "api_key": "2e1a6531-4e3e-416c-b29c-a2de3c13c26a"
-//     }
-
-//Variable formCapture declared to capture form submissions line 64
+//formCapture event listener line 19
 let formCapture = document.querySelector(".comments__form");
+
+//likeButtons event listener line 107
 let likeButtons = document.getElementsByClassName("comment__like-btn");
+
+//deleteButtons event listener line 112
 let deleteButtons =  document.getElementsByClassName("comment__delete-btn");
 
-//Variable date declared in order to add accurate Date in comments and and accurate datetime attributes
-const date = new Date();
-console.log(date);
-console.log(Date.now());
-let timeNow = moment(Date.now()).fromNow();
-console.log(moment());
-console.log(timeNow);
-
-
-//Variable commentSection declared to identify where to insert HTML into page so comments will display line 63
+//commentSection HTML insertion line 104
 const commentSection = document.querySelector('.comments__container');
 
 
-//Variable allComments declared to store HTML which will be added to the page.  Comment HTML is added to allComments by invoking the displayComment function on a comment object.  line 66
-let allComments = '';
-
-
-
-
-
-
-// The comment array is an array of objects that each contain the values that the displayComment function can use to render the comment correctly on the page.
-// let commentArray = [
-//     {
-//         name: "Theodore Duncan",
-//         date: "11/15/2018",
-//         datetime: "2018-11-15",
-//         comment: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever",
-//         commentImage: ""
-//     },
-//     {
-//         name: "Gary Wong",
-//         date: "12/12/2018",
-//         datetime: "2018-12-12",
-//         comment: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
-//         commentImage: ""
-//     },
-//     {
-//         name: "Micheal Lyons",
-//         date: "12/18/2018",
-//         datetime: "2018-12-18",
-//         comment: "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.",
-//         commentImage: ""
-//     },
-// ];
-
-// displayComment function takes a comment object, formats it into HTML, adds it to the allComments variable, and puts the final HTML containing all comments onto the page
-
-// const displayComment = (commentObject) => {
-// let commentHTML = 
-//     `<div class="comment">
-//         <div class="comment__image-container">
-//             <div class="comment__image comment__comment-profile-pic ${commentObject.commentImage}">
-//             </div>
-//         </div>
-//         <div class="comment__container">
-//             <div class="comment__name-date-cont">
-//                 <p class="comment__name">${commentObject.name}
-//                 </p>
-//                 <time class="comment__date" datetime="${commentObject.datetime}">${commentObject.date}
-//                 </time>
-//             </div> 
-//             <p class="comment__content">${commentObject.comment}
-//             </p>
-//         </div>
-//     </div>`;
-// allComments = allComments + commentHTML;
-// commentSection.innerHTML = allComments;
-// }
-
-// This event listener listens for comment section submissions, puts the information from the form into a comment Object, pushes the comment object to the comments Array, invokes the displayComment function on the new comment object to modify it into appropriate HTML and add it to allComments
-let realComment = {};
-let headHeaders = {
-    headers: {
-        'Content-Type': 'application/json'
-    }
-};
-
+//The following code adds an event listener to the comment form, once the comment form is submitted it uses the captured info to build a comment object and post it to the API.  It then calls the displayComments function in order to display the new comment.
 formCapture.addEventListener('submit', (e) => {
     e.preventDefault();
     const commentObj = {
         comment: e.target.commentField.value,
         name: e.target.name.value,
     }
-    console.log(commentObj)
+    const headers = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
     const url = "https://project-1-api.herokuapp.com/comments?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a"
-    axios.post(url, commentObj, headHeaders).then(res => {
-        letsGo();
+    axios
+    .post(url, commentObj, headers).then(res => {
+        displayComments();
     e.target.reset()
     })
-
 })
 
-
-
-
-
-
-
-
-
-
-
-
-    //     const commentDate = date.toLocaleDateString();
-//     const isoDate = date.toISOString();
-//         let newComment = {}
-//         newComment.name = name;
-//         newComment.comment = comment;
-//         newComment.id = "";
-//         newComment.timestamp = Date.now();
-//         newComment.likes = "";
-//         realComment = newComment;
-//         console.log(typeof newComment);
-//         let newCommentJSON = JSON.stringify(newComment);
-//         let pleaseplease = JSON.parse(newCommentJSON)
-//         console.log(typeof newCommentJSON);
-        
-//         console.log(name);
-//         console.log(realComment);
-//         console.log(headHeaders);
-//         const url = "https://project-1-api.herokuapp.com/comments?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a"
-//         axios.post(url, newCommentJSON, {headers: {
-//             'Content-Type': 'application/json'
-//         }}).then((response) => 
-//             console.log(response.data)
-//         )})
-
-// console.log(realComment);
-
-
-//     {
-//         name: ${name},
-//         comment: ${comment},
-//         id: ''
-//         timestamp: ${Date.now()},
-//         likes: 0,
-//     }`);
-//     formCapture.reset();
-//     // commentArrayAxios();
-//     // let commentImage = document.querySelector(".comment__profile-pic");
-
-//     // let backgroundImage = document.querySelector(".profile-pic");
-//     // let answer = ""
-
-//     // displayComment(newCommentObject);
-
-// })
-
-// // Invokes displayComment on each element of the Comments Array.  This loads the stored comments when the page loads.
-// // commentArray.forEach(displayComment);
+//The addLike function updates the comment object in the API using axios.put . Once the comment object in the API is updated, it replaces the HTML of the like button from an empty heart to a filled heart, disables the button so you can't like again, and uses the result to update the likes count on the page.  Event listeners for like buttons are added in the displayComments function, as there are no buttons to target until they are displayed on the page.
 function addLike(e){
     e.preventDefault();
+    axios
+    .put(`https://project-1-api.herokuapp.com/comments/${e.target.name}/like?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
     
-    axios.put(`https://project-1-api.herokuapp.com/comments/${e.target.name}/like?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
     .then( (result) => {
-    
-    console.log(result);
-    console.log(e.target);
-
-    e.target.parentElement.innerHTML = `<button type="submit" class="comment__like-btn" name="${result.data.id}">♥
+    e.target.parentElement.innerHTML = `
+    <button type="submit" class="comment__like-btn" name="${result.data.id}">♥
     </button> ${result.data.likes} likes`;
     e.target.disabled = true;})
+    
     .catch((error) => {
         console.error(error);
     })
 }
 
+//The deleteComment function uses axios.delete to delete the comment from the API and then calls the displayComments function to refresh the comments on the page.
 function deleteComment(e){
     e.preventDefault();
-    console.log(e.target.name);
-    axios.delete(`https://project-1-api.herokuapp.com/comments/${e.target.name}?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
-    .then((result) => {
-        console.log(result)
-    }).then(() => {
-        letsGo();
+    axios
+    .delete(`https://project-1-api.herokuapp.com/comments/${e.target.name}?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a`)
+    
+    .then(() => {
+        displayComments();
     })
     
     .catch((error) => {
@@ -194,8 +67,10 @@ function deleteComment(e){
     })
 }
 
-function letsGo(){axios
+//The displayComments function uses a GET request to access the API, and then iterates through the return using values from the result to create the HTML for the comments, and then inserts those comments onto the page. After the comments are loaded on the page, it adds event listeners to the delete and like buttons of the comments.
+function displayComments(){axios
     .get("https://project-1-api.herokuapp.com/comments?api_key=2e1a6531-4e3e-416c-b29c-a2de3c13c26a")
+
     .then(result => {
         let commentsHTML = '';
         for(i = 0; i < result.data.length; i++) {
@@ -212,23 +87,23 @@ function letsGo(){axios
                     <time class="comment__date" datetime="">${moment(result.data[i].timestamp).fromNow()}
                     </time>
                 </div> 
-            
                 <p class="comment__content">${result.data[i].comment}
                 </p>
-                <div class="comment__btn-container"><button type="submit" class="comment__delete-btn" name="${result.data[i].id}">Delete comment</button>
-                <div class='comment__like-btn-cont'>
-                <button type="submit" class="comment__like-btn" name="${result.data[i].id}">♡
-                </button> ${result.data[i].likes} likes
-                </div>
+                <div class="comment__btn-container">
+                    <button type="submit" class="comment__delete-btn" name="${result.data[i].id}">Delete comment
+                    </button>
+                    <div class='comment__like-btn-cont'>
+                        <button type="submit" class="comment__like-btn" name="${result.data[i].id}">♡
+                        </button> ${result.data[i].likes} likes
+                    </div>
                 </div>
             </div>
         </div>`;
 commentsHTML = commentsHTML + commentHTML;
     }
 commentSection.innerHTML = commentsHTML;
-}
-
-).then( function(){
+})
+.then( function(){
     for(i=0; i < likeButtons.length; i++){
         likeButtons[i].addEventListener('click', addLike);
     }
@@ -240,62 +115,5 @@ commentSection.innerHTML = commentsHTML;
 })
 }
 
-letsGo();
-
-// function addLike(){
-//     e.preventDefault();
-//     console.log(e.target);
-//     e.target.innerText = `♥`
-//     e.target.disabled = true;
-
-// }
-
-
-
-// const likeButtonsListener = (arr) => {
-    // for(i=0; i < likeButtons.length; i++) {
-    // console.log(likeButtons[i]);
-    
-    
-        // [i].addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     console.log(e.target);
-    //     console.log(e)
-//     })
-// }}
-
-
-
-// })
-
-
-
-// const buttonTime = function(obj){
-//     obj.forEach(function(el){
-//         console.log(el);
-//     })
-// }
-
-// buttonTime(likeButtons);
-
-// .forEach(button => {
-//     addEventListener('click', (e) => {
-//         e.preventDefault();
-//         console.log(e.target);
-// })
-
-
-// })
-
-
-
-// likeButtons.forEach(button => {
-//     button.addEventListener('submit', (e) => {
-//         e.preventDefault();
-
-//         // 
-//     })
-// })
-
-
-// ♥
+//displayComments function invoked to display comments on page load.
+displayComments();

@@ -55,14 +55,13 @@ ul {
 
 // NAVBAR
 .navbar {
-    background-color: #323232;
+    @include flexCol;
+    background-color: $black;
     width: 100%;
-    color: #AFAFAF;
-    display: flex;
+    color: $silver;
     padding-bottom: .5rem;
 
     @include mobile {
-        flex-direction: column;
         height: 5rem;
         justify-content: center;
     }
@@ -207,8 +206,7 @@ ul {
 
 // ABOUT SECTION
 .about {
-    display: flex;
-    flex-direction: column;
+    @include flexCol;
     align-items: flex-start;
     width: 100%;
 
@@ -235,21 +233,21 @@ ul {
         }
 
         @include desktop {
-            width: 30.8%;
+            width: 30.8vw;
         }
     }
 
     &__article-cont {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         justify-content: flex-start;
-        padding: 0 5vw;
+        padding: 0 5%;
 
         @include tablet {
             padding: 0 3.175%;
         }
         @include desktop {
-            padding: 0 18.88888888%;
+            padding: 0 18.88888888vw;
+            justify-content: center;
         }
     }
 
@@ -258,7 +256,6 @@ ul {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            width: 100vw;
         }
     }
 
@@ -355,7 +352,7 @@ ul {
 
     &__title {
         @include H1-MOB;
-        font-weight: 700;
+        font-weight: $bold;
         margin-bottom: 1.5rem;
         align-self: flex-start;
         margin-top: 2rem;
@@ -376,7 +373,7 @@ ul {
 // PHOTO GALLERY
 
 .photos {
-    background-color: #FAFAFA;
+    background-color: $alab;
     padding-top: 2rem;
 
     @include tablet {
@@ -387,9 +384,7 @@ ul {
 
     &__container {
         @include flexCol;
-        background-color: #FAFAFA;
-        // display: flex;
-        // flex-direction: column;
+        background-color: $alab;
         flex-wrap: wrap;
         align-items: center;
         width: 100%;
@@ -487,7 +482,6 @@ ul {
 
     &__delete-btn {
         display: inline-block;
-        // width: 50%;
         align-self: flex-start;
         border: none;
         padding:0;
@@ -520,7 +514,6 @@ ul {
 
     &__like-btn {
         display: inline-block;
-        // width: 3rem;
         background-color: $white;
         border: none;
         color: red;
@@ -625,7 +618,7 @@ ul {
 
     &__comment-input {
         height: 6rem;
-        padding: 1rem;
+        padding: .5rem;
         text-align: start;
         background-color: $alab;
         border: 2px solid $merc;
@@ -739,7 +732,6 @@ ul {
         right: 5px;
 
         @include tablet {
-            display: flex;
             flex-direction: row;
             position: initial;
         }
