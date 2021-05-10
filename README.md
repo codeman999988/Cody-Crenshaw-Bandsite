@@ -2,4 +2,6 @@ This project is BANDSITE.  It utilizes mockups and provided assets to recreate a
 
 The current version of the site is the sprint three "final" version.
 
-The site has functionality.  It has a comments section on the index page that is populated with Javascript utilizing axios to make API requests.  Each comment can be liked, updating the API, or deleted, removing it from the API.  It has a shows section on the show page that is populated with Javascript utilizing axios to make API requests. 
+The site has functionality.  It has a comments section on the index page that is populated with Javascript utilizing axios to make API requests.  Each comment can be liked, updating the API, or deleted, removing it from the API.  It has a shows section on the show page that is populated with Javascript utilizing axios to make API requests.
+
+This website was built as a project for BrainStation's web development bootcamp.  BrainStation provided mockups and requirements for certain functionality.
